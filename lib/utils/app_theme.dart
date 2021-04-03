@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  ThemeData themeData = ThemeData(
-      scaffoldBackgroundColor: Color(0xffFFFFFF),
-      primaryColor: Color(0xff38C1EE),
-      accentColor: Color(0xff),
-      fontFamily: 'Candara',
-      textTheme: TextTheme(
-          bodyText1: TextStyle(
-              fontFamily: 'SanFrancisco',
-              fontSize: 14,
-              color: Color(0xff9D9EA3))));
+  final ThemeData themeData = ThemeData(
+    scaffoldBackgroundColor: const Color(0xffFFFFFF),
+    primaryColor: const Color(0xff38C1EE),
+    accentColor: const Color(0xffffffff),
+    fontFamily: 'WorkSans',
+    appBarTheme: const AppBarTheme(backgroundColor: const Color(0xffFFFFFF)),
+    textTheme: const TextTheme(
+      bodyText1: const TextStyle(
+        fontFamily: 'WorkSans',
+        fontSize: 14,
+        color: const Color(0xff9D9EA3),
+      ),
+      bodyText2: const TextStyle(
+        fontFamily: 'WorkSans',
+        fontWeight: FontWeight.w600,
+        color: const Color(0xff9D9EA3),
+      ),
+      headline2: const TextStyle(
+        fontFamily: 'WorkSans',
+        fontStyle: FontStyle.normal,
+        fontWeight: FontWeight.w700,
+        color: Colors.black,
+      ),
+    ),
+  );
 }

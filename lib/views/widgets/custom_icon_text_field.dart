@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomIconTextField extends StatelessWidget {
-  final Icon suffixicon;
-  final Icon prefixIcon;
+  final Widget suffixicon;
+  final Widget prefixIcon;
   final String hintText2;
   final TextEditingController txtController;
   const CustomIconTextField(
@@ -32,10 +32,11 @@ class CustomIconTextField extends StatelessWidget {
               prefixIcon: prefixIcon,
               hintText: hintText2,
               hintStyle: TextStyle(
-                color: Color(0xffC9C9C9),
-                fontSize: 16,
-                fontFamily: 'SanFrancisco',
-              ),
+                  color: Color(0xffB5B5B5),
+                  fontSize: 16,
+                  fontFamily: 'WorkSans',
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w500),
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
               border: InputBorder.none,

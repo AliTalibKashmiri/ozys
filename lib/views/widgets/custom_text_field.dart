@@ -13,7 +13,6 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      width: Get.width,
       margin: EdgeInsets.only(top: 8, bottom: 20),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12), color: Color(0xffEFEFF4)),
