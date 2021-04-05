@@ -5,8 +5,24 @@ import 'package:ozys/views/widgets/custom_text_field.dart';
 import 'package:ozys/views/widgets/home_tile.dart';
 import 'home_page.dart';
 
-class ExploreScreen extends StatelessWidget {
+class ExploreScreen extends StatefulWidget {
+  @override
+  _ExploreScreenState createState() => _ExploreScreenState();
+}
+
+class _ExploreScreenState extends State<ExploreScreen>
+    with SingleTickerProviderStateMixin {
   final controller = TextEditingController();
+  TabController tabcontroller;
+  @override
+  void initState() {
+    super.initState();
+    tabcontroller = TabController(
+      length: 3,
+      vsync: this,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final boldFonts = Theme.of(context)
@@ -18,7 +34,7 @@ class ExploreScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            toolbarHeight: 420,
+            toolbarHeight: 470,
             flexibleSpace: Column(
               children: [
                 SizedBox(
@@ -53,6 +69,20 @@ class ExploreScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                TabBar(
+                  tabs: [
+                    Tab(
+                      text: 'All',
+                    ),
+                    Tab(
+                      text: 'Barber Shop',
+                    ),
+                    Tab(
+                      text: 'Salon',
+                    )
+                  ],
+                  controller: tabcontroller,
+                ),
                 CategoriesListHeading(
                   data: 'Popular Near By You',
                 ),
@@ -72,13 +102,7 @@ class ExploreScreen extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: Container(
-              width: Get.width,
-              height: 100,
-              child: Column(
-                children: [Text('sadsdf')],
-              ),
-            ),
+            child: TabViewWidget(boldFonts: boldFonts, mediumFont: mediumFont),
           ),
           SliverList(
               delegate: SliverChildBuilderDelegate(
@@ -87,6 +111,64 @@ class ExploreScreen extends StatelessWidget {
             },
             childCount: 33,
           ))
+        ],
+      ),
+    );
+  }
+}
+
+class TabViewWidget extends StatelessWidget {
+  const TabViewWidget({
+    Key key,
+    @required this.boldFonts,
+    @required this.mediumFont,
+  }) : super(key: key);
+
+  final TextStyle boldFonts;
+  final TextStyle mediumFont;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: Get.width,
+      height: 100,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              SizedBox(
+                width: 16,
+              ),
+              Text('Results(200)', style: boldFonts.copyWith(fontSize: 18)),
+            ],
+          ),
+          SizedBox(
+            height: 12,
+          ),
+          Container(
+            height: 30,
+            width: 120,
+            margin: EdgeInsets.only(left: 20),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Color(0xffE6E6E6))),
+            child: Row(
+              children: [
+                Icon(Icons.filter_alt_rounded),
+                SizedBox(
+                  width: 8,
+                ),
+                Text('Filters',
+                    style: mediumFont.copyWith(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff8A8A8F),
+                    )),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -106,8 +188,9 @@ class ExpolorerTile extends StatelessWidget {
         .copyWith(fontWeight: FontWeight.w800, color: Colors.black);
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     return Container(
-      height: 210,
+      height: 315,
       width: 210,
+      margin: EdgeInsets.only(left: 12, right: 12, top: 12),
       child: Card(
         elevation: 0.0,
         child: Column(
@@ -115,6 +198,30 @@ class ExpolorerTile extends StatelessWidget {
             Image.asset(
               'assets/images/imag.png',
               height: 125,
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Image.asset(
+                  'assets/images/imag.png',
+                  height: 50,
+                ),
+                Image.asset(
+                  'assets/images/imag.png',
+                  height: 50,
+                ),
+                Image.asset(
+                  'assets/images/imag.png',
+                  height: 50,
+                ),
+                Image.asset(
+                  'assets/images/imag.png',
+                  height: 50,
+                ),
+              ],
             ),
             SizedBox(
               height: 12,
