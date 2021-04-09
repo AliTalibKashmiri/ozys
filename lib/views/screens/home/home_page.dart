@@ -193,27 +193,30 @@ class CategoriesListHeading extends StatelessWidget {
         .headline2
         .copyWith(fontWeight: FontWeight.w800, color: Colors.black);
     final mediumFont = Theme.of(context).textTheme.bodyText2;
-    return Row(
-      children: [
-        SizedBox(
-          width: 18,
-        ),
-        Text(
-          data,
-          style: boldFonts.copyWith(
-            fontSize: 18,
+    return Container(
+      height: 50,
+      child: Row(
+        children: [
+          SizedBox(
+            width: 18,
           ),
-        ),
-        Spacer(),
-        Text(
-          'See all >',
-          style:
-              mediumFont.copyWith(fontSize: 11, fontWeight: FontWeight.normal),
-        ),
-        SizedBox(
-          width: 18,
-        ),
-      ],
+          Text(
+            data,
+            style: boldFonts.copyWith(
+              fontSize: 18,
+            ),
+          ),
+          Spacer(),
+          Text(
+            'See all >',
+            style: mediumFont.copyWith(
+                fontSize: 11, fontWeight: FontWeight.normal),
+          ),
+          SizedBox(
+            width: 18,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -20,7 +20,7 @@ class HomeListTile extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              'assets/images/component.png',
+              'assets/images/hair_long.png',
               height: 133,
             ),
             SizedBox(

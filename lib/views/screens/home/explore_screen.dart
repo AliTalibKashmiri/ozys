@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:ozys/views/widgets/custom_icon_text_field.dart';
 import 'package:ozys/views/widgets/custom_text_field.dart';
@@ -18,7 +19,7 @@ class _ExploreScreenState extends State<ExploreScreen>
   void initState() {
     super.initState();
     tabcontroller = TabController(
-      length: 3,
+      length: 5,
       vsync: this,
     );
   }
@@ -31,92 +32,114 @@ class _ExploreScreenState extends State<ExploreScreen>
         .copyWith(fontWeight: FontWeight.w800, color: Colors.black);
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            toolbarHeight: 470,
-            flexibleSpace: Column(
+      appBar: AppBar(
+        toolbarHeight: 230,
+        elevation: 0.0,
+        flexibleSpace: Column(
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8, right: 8),
+              child: CustomIconTextField(
+                  suffixicon: SizedBox(),
+                  txtController: controller,
+                  hintText2: 'What are you Looking For?',
+                  prefixIcon: Icon(Icons.search)),
+            ),
+            Row(
               children: [
                 SizedBox(
-                  height: 50,
+                  width: 8,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8),
-                  child: CustomIconTextField(
-                      suffixicon: SizedBox(),
-                      txtController: controller,
-                      hintText2: 'What are you Looking For?',
-                      prefixIcon: Icon(Icons.search)),
-                ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 8,
-                    ),
-                    Expanded(
-                      child: CustomTextField(
-                          txtController: controller, hintText2: 'Where?'),
-                    ),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    Expanded(
-                      child: CustomTextField(
-                          txtController: controller, hintText2: 'When?'),
-                    ),
-                    SizedBox(
-                      width: 8,
-                    ),
-                  ],
-                ),
-                TabBar(
-                  tabs: [
-                    Tab(
-                      text: 'All',
-                    ),
-                    Tab(
-                      text: 'Barber Shop',
-                    ),
-                    Tab(
-                      text: 'Salon',
-                    )
-                  ],
-                  controller: tabcontroller,
-                ),
-                CategoriesListHeading(
-                  data: 'Popular Near By You',
+                Expanded(
+                  child: CustomTextField(
+                      txtController: controller, hintText2: 'Where?'),
                 ),
                 SizedBox(
-                  height: 12,
+                  width: 8,
                 ),
-                Container(
-                  height: 220,
-                  child: ListView.builder(
-                      itemCount: 12,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return HomeListTile();
-                      }),
+                Expanded(
+                  child: CustomTextField(
+                      txtController: controller, hintText2: 'When?'),
+                ),
+                SizedBox(
+                  width: 8,
                 ),
               ],
             ),
+            TabBar(
+              tabs: [
+                Tab(
+                  text: 'All',
+                ),
+                Tab(
+                  text: 'Barber Shop',
+                ),
+                Tab(
+                  text: 'Salon',
+                ),
+                Tab(
+                  text: 'Massage',
+                ),
+                Tab(
+                  text: 'Beauty Salon',
+                )
+              ],
+              controller: tabcontroller,
+            ),
+            SizedBox(
+              height: 12,
+            ),
+          ],
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          width: Get.width,
+          height: Get.height,
+          child: Column(
+            children: [
+              CategoriesListHeading(
+                data: 'Popular Near By You',
+              ),
+              Container(
+                height: 220,
+                child: ListView.builder(
+                    itemCount: 12,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return HomeListTile();
+                    }),
+              ),
+              TabViewWidget(boldFonts: boldFonts, mediumFont: mediumFont),
+              Expanded(child: ListView.builder(itemBuilder: (context, index) {
+                return ExpolorerTile();
+              }))
+            ],
           ),
-          SliverToBoxAdapter(
-            child: TabViewWidget(boldFonts: boldFonts, mediumFont: mediumFont),
-          ),
-          SliverList(
-              delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              return ExpolorerTile();
-            },
-            childCount: 33,
-          ))
-        ],
+        ),
       ),
     );
   }
 }
+//
 
+//
+//
+//
+
+//  SliverToBoxAdapter(
+//             child: TabViewWidget(boldFonts: boldFonts, mediumFont: mediumFont),
+//           ),
+//           SliverList(
+//               delegate: SliverChildBuilderDelegate(
+//             (context, index) {
+//               return ExpolorerTile();
+//             },
+//             childCount: 33,
+//           ))
 class TabViewWidget extends StatelessWidget {
   const TabViewWidget({
     Key key,
@@ -191,87 +214,117 @@ class ExpolorerTile extends StatelessWidget {
       height: 315,
       width: 210,
       margin: EdgeInsets.only(left: 12, right: 12, top: 12),
-      child: Card(
-        elevation: 0.0,
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/images/imag.png',
-              height: 125,
-            ),
-            SizedBox(
-              height: 3,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Image.asset(
-                  'assets/images/imag.png',
-                  height: 50,
+      child: Column(
+        children: [
+          Stack(
+            children: [
+              Card(
+                elevation: 1.0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+                clipBehavior: Clip.antiAliasWithSaveLayer,
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/images/hair_long.png',
+                      height: 130,
+                    ),
+                    SizedBox(
+                      height: 3,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Image.asset(
+                          'assets/images/imag.png',
+                          height: 50,
+                        ),
+                        Image.asset(
+                          'assets/images/imag.png',
+                          height: 50,
+                        ),
+                        Image.asset(
+                          'assets/images/imag.png',
+                          height: 50,
+                        ),
+                        Image.asset(
+                          'assets/images/imag.png',
+                          height: 50,
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-                Image.asset(
-                  'assets/images/imag.png',
-                  height: 50,
+              ),
+              Align(
+                  alignment: Alignment.topRight,
+                  child: Wrap(
+                    direction: Axis.vertical,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        '5.0 ',
+                        style: boldFonts.copyWith(
+                            fontSize: 11, color: Colors.white),
+                      ),
+                      Text('22 reviews  ',
+                          style: mediumFont.copyWith(
+                              fontSize: 10, color: Colors.white))
+                    ],
+                  ))
+            ],
+          ),
+          SizedBox(
+            height: 12,
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 6,
+              ),
+              Text(
+                'Red Box Barber',
+                style: boldFonts.copyWith(
+                  fontSize: 12,
                 ),
-                Image.asset(
-                  'assets/images/imag.png',
-                  height: 50,
+              ),
+              Spacer(),
+              Text(
+                '4.9 mi',
+                style: mediumFont.copyWith(fontSize: 8),
+              ),
+              SizedBox(
+                width: 8,
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 12,
+          ),
+          Row(
+            children: [
+              Icon(
+                Icons.location_on,
+                size: 18,
+              ),
+              SizedBox(
+                width: 8,
+              ),
+              Expanded(
+                child: Text(
+                  'F 11 markaz islamabad 12 gali no 4 asd ',
+                  style: mediumFont.copyWith(
+                      fontSize: 8,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.normal),
                 ),
-                Image.asset(
-                  'assets/images/imag.png',
-                  height: 50,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 6,
-                ),
-                Text(
-                  'Red Box Barber',
-                  style: boldFonts.copyWith(
-                    fontSize: 12,
-                  ),
-                ),
-                Spacer(),
-                Text(
-                  '4.9 mi',
-                  style: mediumFont.copyWith(fontSize: 8),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 12,
-            ),
-            Row(
-              children: [
-                Icon(
-                  Icons.location_on,
-                  size: 18,
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  child: Text(
-                    'F 11 markaz islamabad 12 gali no 4 asd ',
-                    style: mediumFont.copyWith(
-                        fontSize: 8,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.normal),
-                  ),
-                )
-              ],
-            )
-          ],
-        ),
+              )
+            ],
+          )
+        ],
       ),
     );
   }

@@ -18,7 +18,7 @@ class CustomIconTextField extends StatelessWidget {
     return Container(
       height: 50,
       width: Get.width,
-      margin: EdgeInsets.only(top: 12, left: 4, right: 4),
+      margin: EdgeInsets.only(top: 12, left: 12, right: 12),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12), color: Color(0xffEFEFF4)),
       child: Row(

@@ -13,7 +13,12 @@ AppBar appBar(
           Get.back();
         },
         child: leading),
-    actions: [action],
+    actions: [
+      Padding(
+        padding: const EdgeInsets.only(right: 20, top: 16),
+        child: action,
+      )
+    ],
     centerTitle: false,
     backgroundColor: Colors.white,
     elevation: 0.0,

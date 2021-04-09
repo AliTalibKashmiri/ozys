@@ -7,6 +7,7 @@ class CustomButton extends StatelessWidget {
       @required this.onPress,
       @required this.color,
       @required this.radius,
+      @required this.textColor,
       @required this.borderColor})
       : super(key: key);
 
@@ -15,11 +16,13 @@ class CustomButton extends StatelessWidget {
   final Color color;
   final double radius;
   final Color borderColor;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
         color: color,
+        minWidth: 150,
         padding: EdgeInsets.only(top: 16, bottom: 16),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius),
@@ -30,7 +33,7 @@ class CustomButton extends StatelessWidget {
           child: Text(lable,
               style: TextStyle(
                 fontFamily: 'Candara',
-                color: Colors.white,
+                color: textColor ?? Colors.white,
                 fontWeight: FontWeight.w400,
                 fontSize: 16,
               )),
