@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ozys/views/screens/accont/profile_setting.dart';
+import 'package:ozys/views/screens/home/explore_screen.dart';
 
 import 'package:ozys/views/screens/home/home_page.dart';
 
@@ -16,8 +16,14 @@ class BottomNavController extends GetxController {
         update();
         break;
 
-      case 2:
-        currentPage = ProfileSetting();
+      case 1:
+        currentPage = ExploreScreen();
+        currentIndex = index;
+        update();
+        break;
+
+      case 1:
+        currentPage = Book();
         currentIndex = index;
         update();
         break;

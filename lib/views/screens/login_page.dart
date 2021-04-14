@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:ozys/views/screens/accont/signin_page.dart';
 import 'package:ozys/views/widgets/custom_button.dart';
 import 'package:ozys/views/widgets/social_button.dart';
 
@@ -28,7 +30,9 @@ class LoginPage extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 22, right: 22),
                   child: CustomButton(
                       lable: 'Sign in with Email',
-                      onPress: () {},
+                      onPress: () {
+                        Get.to(()=>SignInPage());
+                      },
                       color: primaryColor,
                       radius: 22,
                       borderColor: primaryColor),

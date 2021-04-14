@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ozys/views/screens/bottom_nav_bar.dart';
+import 'package:ozys/views/screens/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 2)).then((value) {
-      Get.offAll(BottomNavBar());
+      Get.offAll(LoginPage());
     });
     super.initState();
   }

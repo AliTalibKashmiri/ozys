@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ozys/views/screens/accont/create_account.dart';
+import 'package:ozys/views/screens/accont/forget_password.dart';
+import 'package:ozys/views/screens/bottom_nav_bar.dart';
 import 'package:ozys/views/widgets/appBar.dart';
 import 'package:ozys/views/widgets/custom_button.dart';
 import 'package:ozys/views/widgets/custom_icon_text_field.dart';
@@ -54,14 +57,22 @@ class SignInPage extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [Text('Forget Password? ')],
+                children: [
+                  InkWell(
+                      onTap: () {
+                        Get.to(() => ForgetPassword());
+                      },
+                      child: Text('Forget Password? '))
+                ],
               ),
               SizedBox(
                 height: 21,
               ),
               CustomButton(
-                  lable: 'Create an Account',
-                  onPress: () {},
+                  lable: 'Login',
+                  onPress: () {
+                    Get.to(() => BottomNavBar());
+                  },
                   color: primaryColor,
                   radius: 12,
                   borderColor: primaryColor),
