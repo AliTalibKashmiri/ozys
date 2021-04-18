@@ -25,7 +25,7 @@ class SpecialistPage extends StatelessWidget {
             children: [
               Expanded(
                 child: ListView.builder(
-                    itemCount: 6,
+                    itemCount: 4,
                     itemBuilder: (context, index) {
                       return Container(
                         margin: EdgeInsets.all(12),
@@ -41,13 +41,21 @@ class SpecialistPage extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Nivies'),
-                                SizedBox(
-                                  width: 6,
+                                Text(
+                                  'Nivies',
+                                  style: mediumFont.copyWith(
+                                      color: Color(0xff615750), fontSize: 16),
                                 ),
-                                Text('Available')
+                                SizedBox(height: 2),
+                                Text(
+                                  'Available',
+                                  style: mediumFont.copyWith(
+                                      fontSize: 12, color: Color(0xff08B75F)),
+                                )
                               ],
-                            )
+                            ),
+                            Spacer(),
+                            Checkbox(value: false, onChanged: (value) {})
                           ],
                         ),
                       );

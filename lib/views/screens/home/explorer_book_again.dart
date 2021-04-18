@@ -29,7 +29,7 @@ class ExplorerBookAgain extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 40,
+                  height: 30,
                   width: 120,
                   margin: EdgeInsets.only(top: 8, bottom: 20),
                   decoration: BoxDecoration(
@@ -39,7 +39,7 @@ class ExplorerBookAgain extends StatelessWidget {
                       child: Text(
                     'CANCELLED',
                     style:
-                        mediumFont.copyWith(fontSize: 14, color: Colors.white),
+                        mediumFont.copyWith(fontSize: 12, color: Colors.white),
                   )),
                 ),
               ],
@@ -60,7 +60,8 @@ class ExplorerBookAgain extends StatelessWidget {
                 children: [
                   Text(
                     'Jhon Smith',
-                    style: mediumFont.copyWith(fontSize: 12),
+                    style: mediumFont.copyWith(
+                        fontSize: 12, color: Color(0xff000000)),
                   ),
                   SizedBox(
                     height: 8,
@@ -77,7 +78,8 @@ class ExplorerBookAgain extends StatelessWidget {
                 children: [
                   Text(
                     '\$30.00',
-                    style: mediumFont.copyWith(fontSize: 12),
+                    style: mediumFont.copyWith(
+                        fontSize: 12, color: Color(0xff000000)),
                   ),
                   SizedBox(
                     height: 8,
@@ -97,7 +99,8 @@ class ExplorerBookAgain extends StatelessWidget {
               children: [
                 Text(
                   'Total:        \$30.00',
-                  style: mediumFont.copyWith(fontSize: 12),
+                  style: mediumFont.copyWith(
+                      fontSize: 12, color: Color(0xff000000)),
                 )
               ],
             ),

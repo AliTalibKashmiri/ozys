@@ -31,9 +31,8 @@ class AppoimentPage extends StatelessWidget {
             ),
             Text(
               'Upcoming Appointments',
-              style: mediumFont.copyWith(
-                fontSize: 16,
-              ),
+              style:
+                  mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
             ),
             SizedBox(
               height: 16,
@@ -45,29 +44,39 @@ class AppoimentPage extends StatelessWidget {
             ),
             Text(
               'Cancel Appointments',
-              style: mediumFont.copyWith(
-                fontSize: 16,
-              ),
+              style:
+                  mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
             ),
             SizedBox(
               height: 16,
             ),
             AppoimentTileTwo(
-                data: data, data2: data2, data3: data3, data4: data4),
+              data: data,
+              data2: data2,
+              data3: data3,
+              data4: data4,
+              titleOneColor: primaryColor,
+              titleTwoColor: Colors.red,
+            ),
             SizedBox(
               height: 16,
             ),
             Text(
               'Completed Appointments',
-              style: mediumFont.copyWith(
-                fontSize: 16,
-              ),
+              style:
+                  mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
             ),
             SizedBox(
               height: 16,
             ),
             AppoimentTileTwo(
-                data: data, data2: data2, data3: data3, data4: data4),
+              data: data,
+              data2: data2,
+              data3: data3,
+              data4: data4,
+              titleOneColor: primaryColor,
+              titleTwoColor: primaryColor,
+            ),
           ],
         ),
       ),
@@ -82,6 +91,8 @@ class AppoimentTileTwo extends StatelessWidget {
     @required this.data2,
     @required this.data3,
     @required this.data4,
+    @required this.titleOneColor,
+    @required this.titleTwoColor,
   }) : super(key: key);
 
   final String data;
@@ -89,6 +100,8 @@ class AppoimentTileTwo extends StatelessWidget {
   final String data2;
   final String data3;
   final String data4;
+  final Color titleOneColor;
+  final Color titleTwoColor;
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +132,7 @@ class AppoimentTileTwo extends StatelessWidget {
               Text(
                 data3,
                 style: mediumFont.copyWith(
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400,
                     color: Color(0xff272833)),
               ),
@@ -129,7 +142,7 @@ class AppoimentTileTwo extends StatelessWidget {
               Text('3030 Boulevard Curé-Labelle office',
                   maxLines: 2,
                   style: mediumFont.copyWith(
-                      fontSize: 8,
+                      fontSize: 10,
                       fontWeight: FontWeight.w400,
                       color: Color(0xff8D8D8D))),
               SizedBox(
@@ -137,10 +150,10 @@ class AppoimentTileTwo extends StatelessWidget {
               ),
               Container(
                 height: 25,
-                width: 75,
+                width: 150,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.green),
+                    color: titleOneColor),
                 child: Center(
                   child: Text(
                     'BOOK AGAIN',
@@ -186,7 +199,7 @@ class AppoimentTileTwo extends StatelessWidget {
                 width: 60,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    color: Colors.green),
+                    color: titleTwoColor),
                 child: Center(
                   child: Text(
                     'CANCELLED',

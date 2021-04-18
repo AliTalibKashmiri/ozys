@@ -32,10 +32,11 @@ class SearchFilters extends StatelessWidget {
                 height: 50,
               ),
               CustomIconTextField(
-                  suffixicon: Icon(Icons.search),
-                  txtController: controller,
-                  hintText2: 'What are you looking for?',
-                  prefixIcon: SizedBox()),
+                suffixicon: SizedBox(),
+                txtController: controller,
+                hintText2: 'What are you looking for?',
+                prefixIcon: Icon(Icons.search),
+              ),
               SizedBox(
                 height: 8,
               ),
@@ -49,9 +50,18 @@ class SearchFilters extends StatelessWidget {
                     width: 150,
                     margin: EdgeInsets.only(top: 8, left: 8),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Color(0xffEFEFF4)),
-                    child: Center(child: Text(e)),
+                        borderRadius: BorderRadius.circular(32),
+                        border: Border.all(color: Color(0xffEFEFF4)),
+                        color: Color(0xffFFFFFF)),
+                    child: Center(
+                        child: Text(
+                      e,
+                      style: mediumStyle.copyWith(
+                          color: Color(
+                            0xff8A8A8F,
+                          ),
+                          fontSize: 15),
+                    )),
                   );
                 }).toList(),
               ),
@@ -61,7 +71,7 @@ class SearchFilters extends StatelessWidget {
               Text(
                 'Price',
                 style: mediumStyle.copyWith(
-                    color: Color(0xffBBB9BB), fontSize: 18),
+                    color: Color(0xff8A8A8F), fontSize: 18),
               ),
               Slider(
                 value: 5,
@@ -100,9 +110,13 @@ class SearchFilters extends StatelessWidget {
                   SizedBox(
                     width: 8,
                   ),
-                  Text('Man'),
+                  Text(
+                    'Man',
+                    style: mediumStyle.copyWith(
+                        color: Color(0xff615750), fontSize: 15),
+                  ),
                   Checkbox(
-                    value: true,
+                    value: false,
                     onChanged: (value) {},
                     checkColor: primaryColor,
                     activeColor: Colors.grey[200],
@@ -110,9 +124,11 @@ class SearchFilters extends StatelessWidget {
                   SizedBox(
                     width: 8,
                   ),
-                  Text('Women'),
+                  Text('Women',
+                      style: mediumStyle.copyWith(
+                          color: Color(0xff615750), fontSize: 15)),
                   Checkbox(
-                    value: true,
+                    value: false,
                     checkColor: primaryColor,
                     activeColor: Colors.grey[200],
                     onChanged: (value) {},
@@ -120,7 +136,9 @@ class SearchFilters extends StatelessWidget {
                   SizedBox(
                     width: 8,
                   ),
-                  Text('Other')
+                  Text('Other',
+                      style: mediumStyle.copyWith(
+                          color: Color(0xff615750), fontSize: 15))
                 ],
               ),
               SizedBox(

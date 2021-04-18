@@ -14,12 +14,12 @@ class SearchForSevicesPage extends StatelessWidget {
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     final primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
-      appBar: appBar(
-          leading: Icon(Icons.arrow_back_ios),
-          title: 'Search for service',
-          action: SizedBox(),
-          context: context,
-          height: 50),
+      // appBar: appBar(
+      //     leading: Icon(Icons.arrow_back_ios),
+      //     title: 'Search for service',
+      //     action: SizedBox(),
+      //     context: context,
+      //     height: 50),
       body: Container(
         margin: EdgeInsets.only(left: 12, right: 14),
         width: Get.width,
@@ -30,18 +30,21 @@ class SearchForSevicesPage extends StatelessWidget {
             CustomIconTextField(
               suffixicon: Icon(Icons.search),
               txtController: textController,
-              hintText2: 'hintText2',
+              hintText2: 'What are you looking for?',
               prefixIcon: Icon(Icons.search),
             ),
             SizedBox(
               height: 8,
             ),
-            Text('Barber Service'),
+            Text(
+              'Barber Service',
+              style: mediumFont.copyWith(color: Color(0xff3A3834)),
+            ),
             SizedBox(
               height: 8,
             ),
             Container(
-              height: 70,
+              height: 75,
               padding: EdgeInsets.only(top: 12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -51,20 +54,28 @@ class SearchForSevicesPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Haircut'),
+                        Text(
+                          'Haircut',
+                          style: mediumFont.copyWith(color: Color(0xff3A3834)),
+                        ),
                         SizedBox(
                           height: 8,
                         ),
                         Text(
                           'We are taking extra precaution to keep  you and our staff healthy!  Pricing will reflect upon... see more',
-                          style: mediumFont.copyWith(fontSize: 9),
+                          style: mediumFont.copyWith(
+                            fontSize: 11,
+                          ),
                         )
                       ],
                     ),
                   ),
                   Column(
                     children: [
-                      Text('\$132'),
+                      Text(
+                        '\$132',
+                        style: mediumFont.copyWith(color: Color(0xff3A3834)),
+                      ),
                       SizedBox(
                         height: 12,
                       ),

@@ -29,17 +29,17 @@ class BookingConfirm extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 40,
+                  height: 30,
                   width: 120,
                   margin: EdgeInsets.only(top: 8, bottom: 20),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(22),
                       color: Colors.green),
                   child: Center(
                       child: Text(
                     'CANCELLED',
                     style:
-                        mediumFont.copyWith(fontSize: 14, color: Colors.white),
+                        mediumFont.copyWith(fontSize: 12, color: Colors.white),
                   )),
                 ),
               ],
@@ -60,7 +60,8 @@ class BookingConfirm extends StatelessWidget {
                 children: [
                   Text(
                     'Jhon Smith',
-                    style: mediumFont.copyWith(fontSize: 12),
+                    style: mediumFont.copyWith(
+                        fontSize: 12, color: Color(0xff000000)),
                   ),
                   SizedBox(
                     height: 8,
@@ -77,7 +78,8 @@ class BookingConfirm extends StatelessWidget {
                 children: [
                   Text(
                     '\$30.00',
-                    style: mediumFont.copyWith(fontSize: 12),
+                    style: mediumFont.copyWith(
+                        fontSize: 12, color: Color(0xff000000)),
                   ),
                   SizedBox(
                     height: 8,
@@ -97,7 +99,8 @@ class BookingConfirm extends StatelessWidget {
               children: [
                 Text(
                   'Total:        \$30.00',
-                  style: mediumFont.copyWith(fontSize: 12),
+                  style: mediumFont.copyWith(
+                      fontSize: 12, color: Color(0xff000000)),
                 )
               ],
             ),

@@ -19,10 +19,11 @@ class SearchLocation extends StatelessWidget {
                   height: 50,
                 ),
                 CustomIconTextField(
-                    suffixicon: Icon(Icons.search),
-                    txtController: controller,
-                    hintText2: 'What are you looking for?',
-                    prefixIcon: SizedBox()),
+                  suffixicon: SizedBox(),
+                  txtController: controller,
+                  hintText2: 'Where?',
+                  prefixIcon: Icon(Icons.search),
+                ),
                 SizedBox(
                   height: 22,
                 ),
@@ -36,8 +37,16 @@ class SearchLocation extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Your Current Location'),
-                        Text('Near You')
+                        Text(
+                          'Your Current Location',
+                          style: mediumStyle.copyWith(
+                              fontSize: 17, color: Colors.black),
+                        ),
+                        Text(
+                          'Near You',
+                          style: mediumStyle.copyWith(
+                              fontSize: 15, color: Color(0xff8D8D8D)),
+                        )
                       ],
                     ),
                     SizedBox()

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ozys/views/screens/home/booking_confirm.dart';
 import 'package:ozys/views/screens/home/explore_screen.dart';
 
 import 'package:ozys/views/screens/home/home_page.dart';
@@ -23,7 +24,7 @@ class BottomNavController extends GetxController {
         break;
 
       case 1:
-        currentPage = Book();
+        currentPage = BookingConfirm();
         currentIndex = index;
         update();
         break;

@@ -13,7 +13,7 @@ class BookAgainTwo extends StatelessWidget {
     final primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
       appBar: appBar(
-          title: '11:00 AM. Today',
+          title: '11:00 AM Today',
           action: SizedBox(),
           leading: Icon(Icons.arrow_back_ios),
           context: context,
@@ -29,7 +29,7 @@ class BookAgainTwo extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  height: 40,
+                  height: 30,
                   width: 120,
                   margin: EdgeInsets.only(top: 8, bottom: 20),
                   decoration: BoxDecoration(
@@ -60,14 +60,16 @@ class BookAgainTwo extends StatelessWidget {
                 children: [
                   Text(
                     'Jhon Smith',
-                    style: mediumFont.copyWith(fontSize: 12),
+                    style:
+                        mediumFont.copyWith(fontSize: 12, color: Colors.black),
                   ),
                   SizedBox(
                     height: 8,
                   ),
                   Text(
                     'Haircut',
-                    style: mediumFont.copyWith(fontSize: 12),
+                    style: mediumFont.copyWith(
+                        fontSize: 12, color: Color(0xff615750)),
                   ),
                 ],
               ),
@@ -77,7 +79,8 @@ class BookAgainTwo extends StatelessWidget {
                 children: [
                   Text(
                     '\$30.00',
-                    style: mediumFont.copyWith(fontSize: 12),
+                    style: mediumFont.copyWith(
+                        fontSize: 18, color: Color(0xff3A3834)),
                   ),
                   SizedBox(
                     height: 8,
@@ -90,14 +93,19 @@ class BookAgainTwo extends StatelessWidget {
               )
             ]),
             SizedBox(
-              height: 23,
+              height: 12,
+            ),
+            Divider(),
+            SizedBox(
+              height: 12,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
                   'Total:        \$30.00',
-                  style: mediumFont.copyWith(fontSize: 12),
+                  style: mediumFont.copyWith(
+                      fontSize: 12, color: Color(0xff3A3834)),
                 )
               ],
             ),

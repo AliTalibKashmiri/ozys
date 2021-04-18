@@ -81,7 +81,11 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 18,
+                  height: 12,
+                ),
+                Divider(),
+                SizedBox(
+                  height: 12,
                 ),
                 Row(
                   children: [
@@ -89,13 +93,17 @@ class HomePage extends StatelessWidget {
                     Text(
                       'Categories',
                       style: mediumFont.copyWith(
-                          fontSize: 17, fontWeight: FontWeight.normal),
+                          fontSize: 17,
+                          fontWeight: FontWeight.normal,
+                          color: Color(0xff000000)),
                     ),
                     Spacer(),
                     Text(
                       'See all >',
                       style: mediumFont.copyWith(
-                          fontSize: 11, fontWeight: FontWeight.normal),
+                          fontSize: 11,
+                          fontWeight: FontWeight.normal,
+                          color: Color(0xff666666)),
                     ),
                     SizedBox(width: 18),
                   ],
@@ -127,10 +135,11 @@ class HomePage extends StatelessWidget {
                     data: data,
                   ),
                   SizedBox(
-                    height: 12,
+                    height: 6,
                   ),
                   Container(
-                    height: 220,
+                    height: 210,
+                    margin: EdgeInsets.only(left: 6),
                     child: ListView.builder(
                         itemCount: 12,
                         scrollDirection: Axis.horizontal,
@@ -138,14 +147,16 @@ class HomePage extends StatelessWidget {
                           return HomeListTile();
                         }),
                   ),
+                  Divider(),
                   CategoriesListHeading(
                     data: data,
                   ),
                   SizedBox(
-                    height: 12,
+                    height: 6,
                   ),
                   Container(
-                    height: 220,
+                    height: 210,
+                    margin: EdgeInsets.only(left: 6),
                     child: ListView.builder(
                         itemCount: 12,
                         scrollDirection: Axis.horizontal,
@@ -153,21 +164,24 @@ class HomePage extends StatelessWidget {
                           return HomeListTile();
                         }),
                   ),
+                  Divider(),
                   CategoriesListHeading(
                     data: data,
                   ),
                   SizedBox(
-                    height: 12,
+                    height: 6,
                   ),
                   Container(
-                    height: 220,
+                    height: 210,
+                    margin: EdgeInsets.only(left: 6),
                     child: ListView.builder(
                         itemCount: 12,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
                           return HomeListTile();
                         }),
-                  )
+                  ),
+                  Divider(),
                 ],
               ),
             ),
@@ -194,7 +208,7 @@ class CategoriesListHeading extends StatelessWidget {
         .copyWith(fontWeight: FontWeight.w800, color: Colors.black);
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     return Container(
-      height: 50,
+      height: 30,
       child: Row(
         children: [
           SizedBox(

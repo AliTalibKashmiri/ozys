@@ -40,14 +40,14 @@ class EditAppoimentTwo extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         CustomButton(
-                            lable: 'Yes',
+                            lable: 'Cancle',
                             onPress: () {},
                             color: const Color(0xffFFFFFF),
                             radius: 12,
-                            textColor: Colors.red,
+                            textColor: Colors.black,
                             borderColor: Colors.grey),
                         CustomButton(
-                            lable: 'No',
+                            lable: 'OK',
                             onPress: () {},
                             color: primaryColor,
                             radius: 12,
@@ -88,6 +88,9 @@ class EditAppoimentTwo extends StatelessWidget {
                 height: 23,
               ),
               Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                CircleAvatar(
+                  backgroundColor: Colors.grey,
+                ),
                 SizedBox(
                   width: 12,
                 ),
@@ -96,7 +99,8 @@ class EditAppoimentTwo extends StatelessWidget {
                   children: [
                     Text(
                       'Jhon Smith',
-                      style: mediumFont.copyWith(fontSize: 12),
+                      style: mediumFont.copyWith(
+                          fontSize: 12, color: Color(0xff000000)),
                     ),
                     SizedBox(
                       height: 8,
@@ -113,7 +117,8 @@ class EditAppoimentTwo extends StatelessWidget {
                   children: [
                     Text(
                       '\$30.00',
-                      style: mediumFont.copyWith(fontSize: 12),
+                      style: mediumFont.copyWith(
+                          fontSize: 12, color: Color(0xff000000)),
                     ),
                     SizedBox(
                       height: 8,
@@ -126,23 +131,14 @@ class EditAppoimentTwo extends StatelessWidget {
                 )
               ]),
               SizedBox(
-                height: 23,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Total:        \$30.00',
-                    style: mediumFont.copyWith(fontSize: 12),
-                  )
-                ],
-              ),
-              SizedBox(
                 height: 18,
               ),
               Row(
                 children: [
-                  Icon(Icons.add),
+                  Icon(
+                    Icons.add_circle_outline,
+                    color: primaryColor,
+                  ),
                   SizedBox(
                     width: 8,
                   ),

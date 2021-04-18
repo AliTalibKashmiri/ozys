@@ -70,6 +70,11 @@ class _ExploreScreenState extends State<ExploreScreen>
               ],
             ),
             TabBar(
+              isScrollable: true,
+              labelStyle:
+                  mediumFont.copyWith(color: Color(0xff000000), fontSize: 15),
+              unselectedLabelStyle:
+                  mediumFont.copyWith(color: Color(0xff8A8A8F), fontSize: 15),
               tabs: [
                 Tab(
                   text: 'All',
@@ -105,7 +110,7 @@ class _ExploreScreenState extends State<ExploreScreen>
                 data: 'Popular Near By You',
               ),
               Container(
-                height: 220,
+                height: 210,
                 child: ListView.builder(
                     itemCount: 12,
                     scrollDirection: Axis.horizontal,
@@ -159,6 +164,7 @@ class TabViewWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Divider(),
           Row(
             children: [
               SizedBox(
@@ -179,7 +185,13 @@ class TabViewWidget extends StatelessWidget {
                 border: Border.all(color: Color(0xffE6E6E6))),
             child: Row(
               children: [
-                Icon(Icons.filter_alt_rounded),
+                SizedBox(
+                  width: 6,
+                ),
+                Icon(
+                  Icons.filter_alt_rounded,
+                  color: Colors.grey,
+                ),
                 SizedBox(
                   width: 8,
                 ),
@@ -208,10 +220,10 @@ class ExpolorerTile extends StatelessWidget {
     final boldFonts = Theme.of(context)
         .textTheme
         .headline2
-        .copyWith(fontWeight: FontWeight.w800, color: Colors.black);
+        .copyWith(fontWeight: FontWeight.bold, color: Colors.black);
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     return Container(
-      height: 315,
+      height: 255,
       width: 210,
       margin: EdgeInsets.only(left: 12, right: 12, top: 12),
       child: Column(
@@ -237,19 +249,19 @@ class ExpolorerTile extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/images/imag.png',
-                          height: 50,
+                          height: 60,
                         ),
                         Image.asset(
                           'assets/images/imag.png',
-                          height: 50,
+                          height: 60,
                         ),
                         Image.asset(
                           'assets/images/imag.png',
-                          height: 50,
+                          height: 60,
                         ),
                         Image.asset(
                           'assets/images/imag.png',
-                          height: 50,
+                          height: 60,
                         ),
                       ],
                     ),
@@ -258,23 +270,33 @@ class ExpolorerTile extends StatelessWidget {
               ),
               Align(
                   alignment: Alignment.topRight,
-                  child: Wrap(
-                    direction: Axis.vertical,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        '5.0 ',
-                        style: boldFonts.copyWith(
-                            fontSize: 11, color: Colors.white),
-                      ),
-                      Text('22 reviews  ',
-                          style: mediumFont.copyWith(
-                              fontSize: 10, color: Colors.white))
-                    ],
-                  ))
+                  child: Card(
+                      margin: EdgeInsets.only(top: 8, right: 6),
+                      color: Colors.black.withOpacity(0.2),
+                      child: Padding(
+                        padding: EdgeInsets.all(5),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            // SizedBox(
+                            //   height: 5,
+                            // ),
+                            Text(
+                              '5.0',
+                              style: boldFonts.copyWith(
+                                  fontSize: 12, color: Color(0xffFFFFFF)),
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            Text(
+                              '22 reviews',
+                              style: mediumFont.copyWith(
+                                  fontSize: 10, color: Color(0xffFFFFFF)),
+                            )
+                          ],
+                        ),
+                      )))
             ],
           ),
           SizedBox(
@@ -308,7 +330,7 @@ class ExpolorerTile extends StatelessWidget {
             children: [
               Icon(
                 Icons.location_on,
-                size: 18,
+                size: 14,
               ),
               SizedBox(
                 width: 8,
@@ -317,9 +339,10 @@ class ExpolorerTile extends StatelessWidget {
                 child: Text(
                   'F 11 markaz islamabad 12 gali no 4 asd ',
                   style: mediumFont.copyWith(
-                      fontSize: 8,
+                      fontSize: 11,
                       fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.normal),
+                      fontWeight: FontWeight.normal,
+                      color: Color(0xff8D8D8D)),
                 ),
               )
             ],

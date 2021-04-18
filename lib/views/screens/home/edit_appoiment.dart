@@ -31,9 +31,21 @@ class EditAppoimentScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return Container(
                         margin: EdgeInsets.all(12),
-                        child: CircleAvatar(
-                          radius: 25,
-                          child: Icon(Icons.person),
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              radius: 25,
+                              child: Icon(Icons.person),
+                            ),
+                            SizedBox(
+                              height: 6,
+                            ),
+                            Text(
+                              'Any Body',
+                              style: mediumFont.copyWith(
+                                  color: Color(0XFF615750), fontSize: 12),
+                            )
+                          ],
                         ),
                       );
                     }),
@@ -66,6 +78,9 @@ class EditAppoimentScreen extends StatelessWidget {
                 height: 23,
               ),
               Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                CircleAvatar(
+                  backgroundColor: Colors.grey,
+                ),
                 SizedBox(
                   width: 12,
                 ),
@@ -74,7 +89,8 @@ class EditAppoimentScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Jhon Smith',
-                      style: mediumFont.copyWith(fontSize: 12),
+                      style: mediumFont.copyWith(
+                          fontSize: 12, color: Color(0xff000000)),
                     ),
                     SizedBox(
                       height: 8,
@@ -91,7 +107,8 @@ class EditAppoimentScreen extends StatelessWidget {
                   children: [
                     Text(
                       '\$30.00',
-                      style: mediumFont.copyWith(fontSize: 12),
+                      style: mediumFont.copyWith(
+                          fontSize: 12, color: Color(0xff000000)),
                     ),
                     SizedBox(
                       height: 8,
@@ -106,21 +123,15 @@ class EditAppoimentScreen extends StatelessWidget {
               SizedBox(
                 height: 23,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Total:        \$30.00',
-                    style: mediumFont.copyWith(fontSize: 12),
-                  )
-                ],
-              ),
               SizedBox(
-                height: 18,
+                height: 8,
               ),
               Row(
                 children: [
-                  Icon(Icons.add),
+                  Icon(
+                    Icons.add_circle_outline,
+                    color: primaryColor,
+                  ),
                   SizedBox(
                     width: 8,
                   ),
