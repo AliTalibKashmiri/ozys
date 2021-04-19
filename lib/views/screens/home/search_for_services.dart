@@ -14,12 +14,12 @@ class SearchForSevicesPage extends StatelessWidget {
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     final primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
-      // appBar: appBar(
-      //     leading: Icon(Icons.arrow_back_ios),
-      //     title: 'Search for service',
-      //     action: SizedBox(),
-      //     context: context,
-      //     height: 50),
+      appBar: appBar(
+          leading: Icon(Icons.arrow_back_ios),
+          title: 'Search for service',
+          action: SizedBox(),
+          context: context,
+          height: 50),
       body: Container(
         margin: EdgeInsets.only(left: 12, right: 14),
         width: Get.width,
@@ -28,13 +28,12 @@ class SearchForSevicesPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CustomIconTextField(
-              suffixicon: Icon(Icons.search),
-              txtController: textController,
-              hintText2: 'What are you looking for?',
-              prefixIcon: Icon(Icons.search),
-            ),
+                suffixicon: SizedBox(),
+                txtController: textController,
+                hintText2: 'What are you looking for?',
+                prefixIcon: Icon(Icons.search)),
             SizedBox(
-              height: 8,
+              height: 12,
             ),
             Text(
               'Barber Service',

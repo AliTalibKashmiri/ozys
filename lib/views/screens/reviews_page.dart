@@ -8,12 +8,12 @@ class ReviewsPage extends StatelessWidget {
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     final primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
-      appBar: appBar(
-          title: 'Reviews',
-          action: SizedBox(),
-          context: context,
-          height: 50,
-          leading: Icon(Icons.arrow_back_ios)),
+      // appBar: appBar(
+      //     title: 'Reviews',
+      //     action: SizedBox(),
+      //     context: context,
+      //     height: 50,
+      //     leading: Icon(Icons.arrow_back_ios)),
       body: Container(
         child: Column(
           children: [

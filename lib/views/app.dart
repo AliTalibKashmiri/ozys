@@ -18,7 +18,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: theme.themeData,
-      home: ShopDetails(),
+      home: BarberDetailsPage(),
     );
   }
 }

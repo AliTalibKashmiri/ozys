@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ozys/views/screens/home/search_for_services.dart';
+
+import 'package:ozys/controller/custom_tabar_controller.dart';
+import 'package:ozys/views/widgets/custom_tabbar.dart';
 import 'package:ozys/views/widgets/rating_star.dart';
 
 class ShopDetails extends StatelessWidget {
+  // final int index;
+  // const ShopDetails({
+  //   Key key,
+  //   @required this.index,
+  // }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final boldFonts = Theme.of(context)
@@ -12,45 +19,63 @@ class ShopDetails extends StatelessWidget {
         .copyWith(fontWeight: FontWeight.w800, color: Colors.black);
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     final primaryColor = Theme.of(context).primaryColor;
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          leading: Icon(Icons.arrow_back_ios),
-          title: Text('Valdos Barber Shop'),
-          elevation: 0.0,
-          bottom: TabBar(
-              isScrollable: true,
-              unselectedLabelStyle:
-                  mediumFont.copyWith(fontSize: 15, color: Color(0xff8A8A8F)),
-              labelStyle:
-                  mediumFont.copyWith(fontSize: 15, color: Color(0xff000000)),
-              unselectedLabelColor: Color(0xff8A8A8F),
-              tabs: [
-                Tab(
-                  text: 'Services',
-                ),
-                Tab(
-                  text: 'Reviews',
-                ),
-                Tab(
-                  text: 'Portfolio',
-                ),
-                Tab(
-                  text: 'Details',
-                )
-              ]),
-        ),
-        body: Container(
-          child: TabBarView(children: [
-            SearchForSevicesPage(),
-            ReviewTab(boldFonts: boldFonts),
-            Portfolio(),
-            DetailsTab(),
-          ]),
-        ),
-      ),
-    );
+    TextStyle unselectedLabelStyle =
+        mediumFont.copyWith(fontSize: 15, color: Color(0xff8A8A8F));
+    TextStyle labelStyle =
+        mediumFont.copyWith(fontSize: 15, color: Color(0xff000000));
+    return GetBuilder<CustomTabarController>(
+        init: CustomTabarController(),
+        builder: (tabarcontroller) {
+          return Scaffold(
+              appBar: AppBar(
+                  leading: Icon(Icons.arrow_back_ios),
+                  title: Text('Valdos Barber Shop'),
+                  elevation: 0.0,
+                  bottom: PreferredSize(
+                      preferredSize: const Size.fromHeight(30),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomTabBar(
+                            lable: 'Services',
+                            labelStyle: unselectedLabelStyle,
+                            onTab: () {
+                              Navigator.pop(context);
+                            },
+                          ),
+                          CustomTabBar(
+                            lable: 'Reviews',
+                            labelStyle: tabarcontroller.index == 2
+                                ? labelStyle
+                                : unselectedLabelStyle,
+                            onTab: () {
+                              tabarcontroller.updateCurrentWidget(2);
+                            },
+                          ),
+                          CustomTabBar(
+                            lable: 'Portfolio',
+                            labelStyle: tabarcontroller.index == 3
+                                ? labelStyle
+                                : unselectedLabelStyle,
+                            onTab: () {
+                              tabarcontroller.updateCurrentWidget(3);
+                            },
+                          ),
+                          CustomTabBar(
+                            lable: 'Details',
+                            labelStyle: tabarcontroller.index == 4
+                                ? labelStyle
+                                : unselectedLabelStyle,
+                            onTab: () {
+                              tabarcontroller.updateCurrentWidget(4);
+                            },
+                          ),
+                        ],
+                      ))),
+              body: Container(
+                child: tabarcontroller.currentWidget,
+              ));
+        });
   }
 }
 
