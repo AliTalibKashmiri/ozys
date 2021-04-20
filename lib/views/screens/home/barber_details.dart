@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ozys/controller/custom_tabar_controller.dart';
@@ -40,11 +38,11 @@ class BarberDetailsPage extends StatelessWidget {
                 background: barberServicesHeader(boldFonts, mediumFont),
               ),
             ),
-            SliverPersistentHeader(
-              delegate: _SliverAppBarDelegate(),
-              pinned: true,
-              floating: true,
-            ),
+            // SliverPersistentHeader(
+            //   delegate: _SliverAppBarDelegate(),
+            //   pinned: true,
+            //   floating: true,
+            // ),
           ];
         },
         body: SevicesPage(),
@@ -274,23 +272,38 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   @override
   double get minExtent => 20;
   @override
-  double get maxExtent => 60;
+  double get maxExtent => 96;
   TextEditingController textController = TextEditingController();
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      width: Get.width,
-      height: 60,
-      child: InkWell(
-        onTap: () {
-          Get.to(() => SearchForSevicesPage());
-        },
-        child: CustomIconTextFieldTwo(
-            suffixicon: SizedBox(),
-            txtController: textController,
-            hintText2: 'What are you looking for?',
-            prefixIcon: Icon(Icons.search)),
+    return Padding(
+      padding: const EdgeInsets.only(left: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: Get.width,
+            height: 60,
+            child: InkWell(
+              onTap: () {
+                Get.to(() => SearchForSevicesPage());
+              },
+              child: CustomIconTextFieldTwo(
+                  suffixicon: SizedBox(),
+                  txtController: textController,
+                  hintText2: 'What are you looking for?',
+                  prefixIcon: Icon(Icons.search)),
+            ),
+          ),
+          SizedBox(
+            height: 14,
+          ),
+          Text(
+            'Barber Service',
+            style: TextStyle(fontSize: 15, color: Color(0xff3A3834)),
+          )
+        ],
       ),
     );
   }

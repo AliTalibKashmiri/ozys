@@ -100,7 +100,75 @@ class DetailsTab extends StatelessWidget {
           children: [
             Container(
               height: 174,
-              child: Text('Map'),
+              width: double.infinity,
+              child: Stack(
+                children: [
+                  Expanded(child: Image.asset('assets/images/map.png')),
+                  Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                          width: 370,
+                          height: 90,
+                          padding: EdgeInsets.all(12),
+                          margin: EdgeInsets.only(bottom: 20),
+                          child: Card(
+                            elevation: 10,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                CircleAvatar(
+                                  child: Image.asset('assets/images/path.png'),
+                                  radius: 18,
+                                  backgroundColor: Colors.black,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        height: 4,
+                                      ),
+                                      Text('Jacobs Barber Studio',
+                                          style: mediumFont.copyWith(
+                                              fontSize: 12,
+                                              color: Color(0xff3A3834))),
+                                      SizedBox(
+                                        height: 4,
+                                      ),
+                                      Text(
+                                        '3030 Boulevard Curé-Labelle office 300 Laval, QC H7P 4W6',
+                                        style:
+                                            mediumFont.copyWith(fontSize: 10),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                VerticalDivider(),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                Icon(
+                                  Icons.send,
+                                  color: Color(0xffC7C7C7),
+                                ),
+                                SizedBox(
+                                  width: 12,
+                                )
+                              ],
+                            ),
+                          )))
+                ],
+              ),
             ),
             Container(
               margin: EdgeInsets.only(left: 12, right: 13),
@@ -133,11 +201,17 @@ class DetailsTab extends StatelessWidget {
                   Divider(),
                   Row(
                     children: [
-                      Icon(Icons.mobile_off),
+                      Icon(
+                        Icons.mobile_off,
+                        color: Color(0xffADADAD),
+                      ),
                       SizedBox(
                         width: 8,
                       ),
-                      Text('(+1 844-204-8501)'),
+                      Text(
+                        '(+1 844-204-8501)',
+                        style: TextStyle(color: Color(0xffADADAD)),
+                      ),
                       Spacer(),
                       Icon(Icons.call),
                       SizedBox(
@@ -174,7 +248,18 @@ class DetailsTab extends StatelessWidget {
             height: 12,
           ),
           Row(
-            children: [Text(time)],
+            children: [
+              Text('8:00 am '),
+              SizedBox(
+                width: 18,
+              ),
+              Icon(Icons.arrow_forward),
+              Spacer(),
+              Text('5:00 pm'),
+              SizedBox(
+                width: 30,
+              )
+            ],
           )
         ],
       ),
@@ -220,12 +305,15 @@ class PortfolioTile extends StatelessWidget {
             Image.asset(
               'assets/images/hair_long.png',
               fit: BoxFit.fill,
+              width: double.infinity,
+              height: double.infinity,
             ),
             Positioned(
-              top: 100,
+              top: 94,
               right: 0,
               left: 0,
               child: Container(
+                height: 30,
                 color: Colors.black.withOpacity(0.3),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,

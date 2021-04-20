@@ -172,7 +172,7 @@ class EditAppoimentTwo extends StatelessWidget {
                     lable: 'Save Changes',
                     onPress: () {},
                     color: primaryColor,
-                    radius: 22,
+                    radius: 10,
                     textColor: Colors.white,
                     borderColor: primaryColor),
               )
