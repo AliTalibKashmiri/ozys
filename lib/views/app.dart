@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ozys/utils/app_theme.dart';
+import 'package:ozys/views/screens/home/add_another_service.dart';
 import 'package:ozys/views/screens/home/barber_details.dart';
 import 'package:ozys/views/screens/home/book_again_two.dart';
 import 'package:ozys/views/screens/home/booking_confirm.dart';
@@ -20,7 +21,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: theme.themeData,
-      home: BookAgainTwo(),
+      home: AddAnotherService(),
     );
   }
 }
