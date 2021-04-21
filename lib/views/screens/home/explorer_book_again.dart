@@ -112,6 +112,9 @@ class ExplorerBookAgain extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 6,
+            ),
             Padding(
               padding: EdgeInsets.only(left: 12, right: 14),
               child:
@@ -131,7 +134,7 @@ class ExplorerBookAgain extends StatelessWidget {
                           fontSize: 12, color: Color(0xff000000)),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
                     Text(
                       'Haircut',
@@ -146,21 +149,44 @@ class ExplorerBookAgain extends StatelessWidget {
                     Text(
                       '\$30.00',
                       style: mediumFont.copyWith(
-                          fontSize: 12, color: Color(0xff000000)),
+                          fontSize: 16, color: Color(0xff000000)),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
-                    Text(
-                      '8:00 am        5:00 pm',
-                      style: mediumFont.copyWith(fontSize: 12),
+                    Row(
+                      children: [
+                        Text(
+                          '8:00 am',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 18,
+                          color: Color(0xff8D8D8D),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          '5:00 pm',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                      ],
                     ),
                   ],
                 )
               ]),
             ),
             SizedBox(
-              height: 23,
+              height: 12,
+            ),
+            Divider(),
+            SizedBox(
+              height: 12,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 12, right: 14),
@@ -175,6 +201,10 @@ class ExplorerBookAgain extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 9,
+            ),
+            Divider(),
             Spacer(),
             Padding(
               padding: const EdgeInsets.only(left: 14, right: 15),

@@ -2,18 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:ozys/views/widgets/appBar.dart';
 import 'package:ozys/views/widgets/rating_star.dart';
 
-class ReviewsPage extends StatelessWidget {
+class ReviewsTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     final primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
-      // appBar: appBar(
-      //     title: 'Reviews',
-      //     action: SizedBox(),
-      //     context: context,
-      //     height: 50,
-      //     leading: Icon(Icons.arrow_back_ios)),
       body: Container(
         child: Column(
           children: [

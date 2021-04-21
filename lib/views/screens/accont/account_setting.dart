@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ozys/views/widgets/appBar.dart';
+import 'package:ozys/views/widgets/custom_continer_text.dart';
 
 class AccountAndSetting extends StatelessWidget {
   @override
@@ -15,25 +16,11 @@ class AccountAndSetting extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            buildContainer('Account Details'),
-            buildContainer('Address'),
-            buildContainer('Settings'),
+            CustomContinerText('Account Details'),
+            CustomContinerText('Address'),
+            CustomContinerText('Settings'),
           ],
         ),
-      ),
-    );
-  }
-
-  Container buildContainer(String data) {
-    return Container(
-      margin: EdgeInsets.only(left: 12, right: 14, top: 6),
-      child: Column(
-        children: [
-          Row(
-            children: [Text(data), Spacer(), Icon(Icons.arrow_forward_ios)],
-          ),
-          Divider(),
-        ],
       ),
     );
   }

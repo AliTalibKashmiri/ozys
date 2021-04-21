@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget {
                   child: CustomButton(
                       lable: 'Sign in with Email',
                       onPress: () {
-                        Get.to(()=>SignInPage());
+                        Get.to(() => SignInPage());
                       },
                       color: primaryColor,
                       radius: 22,
@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
                   child: SocialButton(
                       lable: 'Continue With Google'.toUpperCase(),
                       onPress: () {},
-                      iconPath: 'assets/images/facebook.png'),
+                      iconPath: 'assets/images/google.png'),
                 ),
                 SizedBox(
                   height: 100,

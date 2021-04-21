@@ -31,7 +31,8 @@ class _LanguagePageState extends State<LanguagePage> {
           children: [
             Row(
               children: [
-                Text('English'),
+                Text('English',
+                    style: TextStyle(color: Color(0xff979697), fontSize: 16)),
                 Spacer(),
                 Radio(
                     activeColor: primaryColor,
@@ -47,7 +48,8 @@ class _LanguagePageState extends State<LanguagePage> {
             Divider(),
             Row(
               children: [
-                Text('French'),
+                Text('French',
+                    style: TextStyle(color: Color(0xff979697), fontSize: 16)),
                 Spacer(),
                 Radio(
                     activeColor: primaryColor,

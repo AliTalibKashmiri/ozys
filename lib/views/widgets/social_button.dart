@@ -14,7 +14,7 @@ class SocialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       elevation: 0.0,
-      height: 40,
+      height: 38,
       padding: EdgeInsets.only(top: 18, bottom: 18),
       shape: RoundedRectangleBorder(
           side: BorderSide(color: Colors.grey),
@@ -24,10 +24,15 @@ class SocialButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              iconPath,
-              width: 24,
-              height: 24,
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+              color: lable.contains('GOOGLE') ? Colors.white : Colors.blue,
+              child: Image.asset(
+                iconPath,
+                width: 24,
+                height: 24,
+              ),
             ),
             SizedBox(
               width: 8,

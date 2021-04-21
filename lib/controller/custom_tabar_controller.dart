@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:ozys/views/screens/home/services_page.dart';
 import 'package:ozys/views/screens/home/shop_details.dart';
-import 'package:ozys/views/screens/reviews_page.dart';
+import 'package:ozys/views/screens/reviews_tab.dart';
 
 class CustomTabarController extends GetxController {
   Widget currentWidget = SevicesPage();
@@ -15,7 +15,7 @@ class CustomTabarController extends GetxController {
         update();
         break;
       case 2:
-        currentWidget = ReviewsPage();
+        currentWidget = ReviewsTab();
         index = i;
         update();
         break;

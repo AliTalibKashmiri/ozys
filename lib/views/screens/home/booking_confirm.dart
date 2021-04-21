@@ -112,6 +112,9 @@ class BookingConfirm extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 12,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 12, right: 14),
               child:
@@ -131,7 +134,7 @@ class BookingConfirm extends StatelessWidget {
                           fontSize: 12, color: Color(0xff000000)),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
                     Text(
                       'Haircut',
@@ -149,18 +152,41 @@ class BookingConfirm extends StatelessWidget {
                           fontSize: 18, color: Color(0xff000000)),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
-                    Text(
-                      '8:00 am        5:00 pm',
-                      style: mediumFont.copyWith(fontSize: 12),
+                    Row(
+                      children: [
+                        Text(
+                          '8:00 am',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 18,
+                          color: Color(0xff8D8D8D),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          '5:00 pm',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                      ],
                     ),
                   ],
                 )
               ]),
             ),
             SizedBox(
-              height: 23,
+              height: 12,
+            ),
+            Divider(),
+            SizedBox(
+              height: 12,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 12, right: 14),
@@ -175,6 +201,13 @@ class BookingConfirm extends StatelessWidget {
                 ],
               ),
             ),
+            // SizedBox(
+            //   height: 9,
+            // ),
+            // Divider(),
+            // SizedBox(
+            //   height: 18,
+            // ),
             Spacer(),
             Center(
                 child: Text(
@@ -188,14 +221,14 @@ class BookingConfirm extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CustomButton(
-                    lable: 'Yes',
+                    lable: 'No',
                     onPress: () {},
                     color: const Color(0xffFFFFFF),
                     radius: 12,
-                    textColor: Colors.red,
+                    textColor: Colors.black,
                     borderColor: Colors.grey),
                 CustomButton(
-                    lable: 'No',
+                    lable: 'Yes',
                     onPress: () {},
                     color: primaryColor,
                     radius: 12,

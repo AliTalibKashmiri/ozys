@@ -39,10 +39,12 @@ class PaymentCard extends StatelessWidget {
               SizedBox(
                 height: 14,
               ),
-              Text(
-                'To pay for appointment with the app',
-                style:
-                    mediumFont.copyWith(fontSize: 11, color: Color(0xff3A3834)),
+              Center(
+                child: Text(
+                  'To pay for appointment with the app',
+                  style: mediumFont.copyWith(
+                      fontSize: 11, color: Color(0xff3A3834)),
+                ),
               ),
               SizedBox(
                 height: 8,

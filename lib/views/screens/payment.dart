@@ -24,6 +24,9 @@ class PaymentPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 30,
+            ),
             Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -32,7 +35,7 @@ class PaymentPage extends StatelessWidget {
                       fontSize: 20, color: Color(0xff3A3834)),
                 )),
             SizedBox(
-              height: 30,
+              height: 50,
             ),
             Text(
               'Payment History',
@@ -47,7 +50,15 @@ class PaymentPage extends StatelessWidget {
               data3: 'Syed Talha Faiz',
               data4: '003283922028111',
               data: 'Completed',
-            )
+            ),
+            Divider(),
+            AppoimentTileOne(
+              data2: '\$14.00',
+              data3: 'Syed Talha Faiz',
+              data4: '003283922028111',
+              data: 'Completed',
+            ),
+            Divider(),
           ],
         ),
       ),
@@ -78,9 +89,9 @@ class AppoimentTileOne extends StatelessWidget {
       width: double.infinity,
       //margin: EdgeInsets.only(left: 12, right: 12),
       padding: EdgeInsets.only(left: 12, right: 12, top: 8),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: Color(0xffE2E0E0))),
+      // decoration: BoxDecoration(
+      //     borderRadius: BorderRadius.circular(12),
+      //     border: Border.all(color: Color(0xffE2E0E0))),
       child: Row(
         children: [
           Column(
@@ -96,7 +107,7 @@ class AppoimentTileOne extends StatelessWidget {
                   child: Text(
                     data,
                     style: mediumFont.copyWith(
-                        fontSize: 8,
+                        fontSize: 9,
                         fontWeight: FontWeight.w400,
                         color: Colors.white),
                   ),
@@ -118,7 +129,7 @@ class AppoimentTileOne extends StatelessWidget {
               Text(
                 data3,
                 style: mediumFont.copyWith(
-                    fontSize: 10,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400,
                     color: Color(0xff272833)),
               ),
@@ -127,7 +138,7 @@ class AppoimentTileOne extends StatelessWidget {
               ),
               Text(data4,
                   style: mediumFont.copyWith(
-                      fontSize: 8,
+                      fontSize: 10,
                       fontWeight: FontWeight.w400,
                       color: Color(0xff8D8D8D)))
             ],

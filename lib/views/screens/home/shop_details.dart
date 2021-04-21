@@ -213,7 +213,22 @@ class DetailsTab extends StatelessWidget {
                         style: TextStyle(color: Color(0xffADADAD)),
                       ),
                       Spacer(),
-                      Icon(Icons.call),
+                      Container(
+                        height: 20,
+                        width: 50,
+                        margin: EdgeInsets.only(right: 12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: Color(0xffEEEEEE)),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Call',
+                            style: mediumFont.copyWith(
+                                fontSize: 12, color: Color(0xffBABABA)),
+                          ),
+                        ),
+                      ),
                       SizedBox(
                         width: 8,
                       )
@@ -249,16 +264,20 @@ class DetailsTab extends StatelessWidget {
           ),
           Row(
             children: [
-              Text('8:00 am '),
-              SizedBox(
-                width: 18,
+              Text(
+                '8:00 am ',
+                style: TextStyle(
+                  color: Color(0xff8D8D8D),
+                ),
               ),
-              Icon(Icons.arrow_forward),
+              Spacer(),
+              Icon(
+                Icons.arrow_forward,
+                color: Color(0xff8D8D8D),
+              ),
               Spacer(),
               Text('5:00 pm'),
-              SizedBox(
-                width: 30,
-              )
+              Spacer()
             ],
           )
         ],
@@ -294,7 +313,7 @@ class PortfolioTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 130,
-      margin: EdgeInsets.only(left: 12, right: 13),
+      margin: EdgeInsets.only(left: 12, right: 13, top: 6),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         clipBehavior: Clip.antiAliasWithSaveLayer,

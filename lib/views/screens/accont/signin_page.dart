@@ -112,7 +112,7 @@ class SignInPage extends StatelessWidget {
                 child: SocialButton(
                     lable: 'Continue With Google'.toUpperCase(),
                     onPress: () {},
-                    iconPath: 'assets/images/facebook.png'),
+                    iconPath: 'assets/images/google.png'),
               ),
               SizedBox(
                 height: 100,

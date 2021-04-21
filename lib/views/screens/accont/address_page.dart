@@ -17,7 +17,7 @@ class AddressPage extends StatelessWidget {
           leading: Icon(Icons.arrow_back_ios),
           title: 'Your Address'),
       body: Container(
-        margin: EdgeInsets.only(left: 14, right: 14),
+        margin: EdgeInsets.only(left: 14, right: 14, top: 14),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

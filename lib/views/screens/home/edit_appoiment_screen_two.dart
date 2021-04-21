@@ -56,7 +56,11 @@ class EditAppoimentTwo extends StatelessWidget {
                     ),
                     SizedBox(
                       height: 6,
-                    )
+                    ),
+                    Divider(),
+                    SizedBox(
+                      height: 6,
+                    ),
                   ],
                 ),
               ),
@@ -85,12 +89,13 @@ class EditAppoimentTwo extends StatelessWidget {
                     }),
               ),
               SizedBox(
-                height: 23,
+                height: 12,
+              ),
+              Divider(),
+              SizedBox(
+                height: 12,
               ),
               Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                CircleAvatar(
-                  backgroundColor: Colors.grey,
-                ),
                 SizedBox(
                   width: 12,
                 ),
@@ -123,15 +128,38 @@ class EditAppoimentTwo extends StatelessWidget {
                     SizedBox(
                       height: 8,
                     ),
-                    Text(
-                      '8:00 am        5:00 pm',
-                      style: mediumFont.copyWith(fontSize: 12),
+                    Row(
+                      children: [
+                        Text(
+                          '8:00 am',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 18,
+                          color: Color(0xff8D8D8D),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          '5:00 pm',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                      ],
                     ),
                   ],
                 )
               ]),
               SizedBox(
-                height: 18,
+                height: 9,
+              ),
+              Divider(),
+              SizedBox(
+                height: 9,
               ),
               Row(
                 children: [
@@ -175,7 +203,8 @@ class EditAppoimentTwo extends StatelessWidget {
                     radius: 10,
                     textColor: Colors.white,
                     borderColor: primaryColor),
-              )
+              ),
+              Divider()
             ],
           ),
         ),

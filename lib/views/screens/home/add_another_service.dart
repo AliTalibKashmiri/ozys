@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ozys/views/widgets/appBar.dart';
 import 'package:ozys/views/widgets/custom_button.dart';
+import 'package:ozys/views/widgets/custom_icon_text_field.dart';
 import 'package:ozys/views/widgets/custom_text_field.dart';
 
 class AddAnotherService extends StatelessWidget {
@@ -28,13 +29,30 @@ class AddAnotherService extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomTextField(
+              CustomIconTextFieldTwo(
                 txtController: controller,
                 hintText2: 'Search for service',
+                prefixIcon: Icon(Icons.search),
+                suffixicon: SizedBox(),
               ),
-              Text(
-                'Barber Service',
-                style: boldFonts.copyWith(fontSize: 15),
+              SizedBox(
+                height: 12,
+              ),
+              Row(
+                children: [
+                  Text(
+                    'Barber Service',
+                    style: boldFonts.copyWith(fontSize: 15),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.keyboard_arrow_up_rounded,
+                    size: 30,
+                  ),
+                  SizedBox(
+                    width: 18,
+                  )
+                ],
               ),
               SizedBox(
                 height: 12,
@@ -93,14 +111,39 @@ class AddAnotherService extends StatelessWidget {
                   children: [
                     Text(
                       'Jhon Smith',
-                      style: mediumFont.copyWith(fontSize: 12),
+                      style: mediumFont.copyWith(
+                          fontSize: 12, color: Colors.black),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 5,
                     ),
-                    Text(
-                      'Haircut',
-                      style: mediumFont.copyWith(fontSize: 12),
+                    Row(
+                      children: [
+                        Text(
+                          'Haircut',
+                          style: mediumFont.copyWith(
+                              fontSize: 12, color: Color(0xff615750)),
+                        ),
+                        SizedBox(
+                          width: 25,
+                        ),
+                        Container(
+                          height: 20,
+                          width: 50,
+                          margin: EdgeInsets.only(right: 12),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Color(0xffEEEEEE)),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Change',
+                              style: mediumFont.copyWith(
+                                  fontSize: 10, color: Color(0xffBABABA)),
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                   ],
                 ),
@@ -108,39 +151,90 @@ class AddAnotherService extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      '\$30.00',
-                      style: mediumFont.copyWith(
-                          fontSize: 12, color: Colors.black),
+                    Row(
+                      children: [
+                        Text(
+                          '\$30.00',
+                          style: mediumFont.copyWith(
+                              fontSize: 15, color: Colors.black),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12)),
+                          elevation: 5,
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Icon(
+                              Icons.close,
+                              size: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
-                    Text(
-                      '8:00 am        5:00 pm',
-                      style: mediumFont.copyWith(fontSize: 12),
+                    Row(
+                      children: [
+                        Text(
+                          '8:00 am',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 18,
+                          color: Color(0xff8D8D8D),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          '5:00 pm',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                      ],
                     ),
                   ],
                 )
               ]),
               SizedBox(
-                height: 23,
+                height: 9,
+              ),
+              Divider(),
+              SizedBox(
+                height: 9,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
                     'Total:        \$30.00',
-                    style: mediumFont.copyWith(fontSize: 12),
+                    style: mediumFont.copyWith(
+                        fontSize: 12, color: Color(0xff3A3834)),
                   )
                 ],
               ),
+              SizedBox(
+                height: 9,
+              ),
+              Divider(),
               SizedBox(
                 height: 18,
               ),
               Row(
                 children: [
-                  Icon(Icons.add),
+                  Icon(
+                    Icons.add_circle_outline,
+                    color: primaryColor,
+                  ),
                   SizedBox(
                     width: 8,
                   ),
@@ -156,7 +250,10 @@ class AddAnotherService extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(Icons.message),
+                  Icon(
+                    Icons.message,
+                    color: Color(0xff9D9D9D),
+                  ),
                   SizedBox(
                     width: 8,
                   ),
@@ -199,7 +296,7 @@ class ServiceTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 73,
       padding: EdgeInsets.only(top: 12),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -209,28 +306,35 @@ class ServiceTile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Haircut'),
+                Text(
+                  'Haircut',
+                  style: mediumFont.copyWith(
+                      color: Color(0xff3A3834), fontSize: 14),
+                ),
                 SizedBox(
                   height: 8,
                 ),
                 Text(
                   'We are taking extra precaution to keep  you and our staff healthy!  Pricing will reflect upon... see more',
-                  style: mediumFont.copyWith(fontSize: 9),
+                  style: mediumFont.copyWith(fontSize: 10),
                 )
               ],
             ),
+          ),
+          SizedBox(
+            width: 6,
           ),
           Column(
             children: [
               Text('\$132'),
               SizedBox(
-                height: 12,
+                height: 8,
               ),
               Text('1h')
             ],
           ),
           SizedBox(
-            width: 3,
+            width: 6,
           ),
           Container(
             width: 60,

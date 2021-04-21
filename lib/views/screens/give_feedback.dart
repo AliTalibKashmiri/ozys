@@ -24,17 +24,27 @@ class GiveFeedBackPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(child: Text('Rate Service')),
-            SizedBox(
-              height: 14,
-            ),
             Center(
-              child: StarRating(
-                color: Colors.yellow,
-                onRatingChanged: (rating) {},
-                rating: 3.0,
-                starCount: 5,
-              ),
+                child: Text(
+              'Rate Service',
+              style: TextStyle(color: Color(0xff3A3834), fontSize: 18),
+            )),
+            SizedBox(
+              height: 22,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                StarRating(
+                  color: Colors.yellow,
+                  onRatingChanged: (rating) {},
+                  rating: 3.0,
+                  starCount: 5,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 12,
             ),
             Divider(),
             Container(
@@ -70,6 +80,13 @@ class GiveFeedBackPage extends StatelessWidget {
             SizedBox(
               height: 24,
             ),
+            Text(
+              '100 characters remaining',
+              style: TextStyle(fontSize: 14, color: Color(0xff979697)),
+            ),
+            SizedBox(
+              height: 12,
+            ),
             Row(
               children: [
                 CustomButton(
@@ -81,11 +98,11 @@ class GiveFeedBackPage extends StatelessWidget {
                     borderColor: Color(0xffE3E3E3)),
                 Spacer(),
                 CustomButton(
-                    lable: 'Cancel',
+                    lable: 'Save',
                     onPress: () {},
                     color: primaryColor,
                     radius: 12,
-                    textColor: Colors.black,
+                    textColor: Colors.white,
                     borderColor: primaryColor)
               ],
             )

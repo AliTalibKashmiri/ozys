@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ozys/views/widgets/appBar.dart';
+import 'package:ozys/views/widgets/custom_continer_text.dart';
 
 class AboutPage extends StatelessWidget {
   @override
@@ -15,7 +16,7 @@ class AboutPage extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            buildContainer(data),
+            CustomContinerText(data),
             Divider(),
             buildContainer('Terms and Services'),
             Divider(),
@@ -31,9 +32,16 @@ class AboutPage extends StatelessWidget {
 
   Container buildContainer(String data) {
     return Container(
-      margin: EdgeInsets.only(left: 12, right: 14, top: 6),
+      margin: EdgeInsets.only(left: 14, right: 14, top: 10),
       child: Row(
-        children: [Text(data), Spacer(), Icon(Icons.arrow_forward_ios)],
+        children: [
+          Text(data, style: TextStyle(color: Color(0xff979697), fontSize: 16)),
+          Spacer(),
+          Icon(
+            Icons.arrow_forward_ios,
+            color: Color(0xffD7D7D7),
+          )
+        ],
       ),
     );
   }

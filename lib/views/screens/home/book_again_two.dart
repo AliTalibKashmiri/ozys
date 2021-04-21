@@ -45,7 +45,7 @@ class BookAgainTwo extends StatelessWidget {
               width: double.infinity,
               child: Stack(
                 children: [
-                  Expanded(child: Image.asset('assets/images/map.png')),
+                  Image.asset('assets/images/map.png'),
                   Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
@@ -112,6 +112,9 @@ class BookAgainTwo extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 6,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 12, right: 14),
               child:
@@ -131,7 +134,7 @@ class BookAgainTwo extends StatelessWidget {
                           fontSize: 12, color: Colors.black),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
                     Text(
                       'Haircut',
@@ -150,11 +153,30 @@ class BookAgainTwo extends StatelessWidget {
                           fontSize: 18, color: Color(0xff3A3834)),
                     ),
                     SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
-                    Text(
-                      '8:00 am        5:00 pm',
-                      style: mediumFont.copyWith(fontSize: 12),
+                    Row(
+                      children: [
+                        Text(
+                          '8:00 am',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 18,
+                          color: Color(0xff8D8D8D),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          '5:00 pm',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                      ],
                     ),
                   ],
                 )
@@ -180,6 +202,10 @@ class BookAgainTwo extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 9,
+            ),
+            Divider(),
             Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ozys/views/widgets/appBar.dart';
+import 'package:ozys/views/widgets/custom_continer_text.dart';
 
 class SettingsPage extends StatelessWidget {
   @override
@@ -19,18 +20,21 @@ class SettingsPage extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            buildContainer('Notification'),
-            buildContainer('SETTINGS'),
-            buildContainer('Language (English)'),
-            buildContainer('Country (Canada)'),
-            buildContainer('Change Password'),
-            buildContainer('Notification'),
+            CustomContinerText('Notification'),
+            CustomContinerText('SETTINGS'),
+            CustomContinerText('Language (English)'),
+            CustomContinerText('Country (Canada)'),
+            CustomContinerText('Change Password'),
+            CustomContinerText('Notification'),
             CustomSwitch(
               data: 'Show Notification',
               onChange: (value) {},
               switchState: true,
             ),
-            Text('IF APPOINTMENT STATUS CHANGES, NOTIFY ME BY'),
+            Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: Text('IF APPOINTMENT STATUS CHANGES, NOTIFY ME BY'),
+            ),
             CustomSwitch(
               data: 'App Notification',
               onChange: (value) {},
@@ -38,20 +42,6 @@ class SettingsPage extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Container buildContainer(String data) {
-    return Container(
-      margin: EdgeInsets.only(left: 12, right: 14, top: 6),
-      child: Column(
-        children: [
-          Row(
-            children: [Text(data), Spacer(), Icon(Icons.arrow_forward_ios)],
-          ),
-          Divider(),
-        ],
       ),
     );
   }
@@ -76,7 +66,7 @@ class CustomSwitch extends StatelessWidget {
     return Container(
       // // height: 50,
       // width: Get.width,
-      // // margin: EdgeInsets.only(top: 12, left: 4, right: 4),
+      margin: EdgeInsets.only(left: 4, right: 4),
       // decoration: BoxDecoration(
       //     borderRadius: BorderRadius.circular(12), color: Colors.white),
       child: Row(
@@ -87,7 +77,7 @@ class CustomSwitch extends StatelessWidget {
           Expanded(
             child: Text(
               data,
-              style: mediumFont.copyWith(fontSize: 12),
+              style: mediumFont.copyWith(fontSize: 16),
             ),
           ),
           Switch(

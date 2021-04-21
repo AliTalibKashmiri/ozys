@@ -28,9 +28,16 @@ class FeedBackAndSupport extends StatelessWidget {
 
   Container buildContainer(String data) {
     return Container(
-      margin: EdgeInsets.only(left: 12, right: 14, top: 6),
+      margin: EdgeInsets.only(left: 14, right: 14, top: 10),
       child: Row(
-        children: [Text(data), Spacer(), Icon(Icons.arrow_forward_ios)],
+        children: [
+          Text(data, style: TextStyle(color: Color(0xff979697), fontSize: 16)),
+          Spacer(),
+          Icon(
+            Icons.arrow_forward_ios,
+            color: Color(0xff979697),
+          )
+        ],
       ),
     );
   }

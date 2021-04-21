@@ -26,17 +26,18 @@ class ConfirmAppoimentPage extends StatelessWidget {
               color: Colors.white,
             ),
             SizedBox(
-              height: 21,
+              height: 30,
             ),
             Text(
               'Appointment Confirmed 11:00 AM. Thu, Apr 8',
               textAlign: TextAlign.center,
-              style: boldFonts.copyWith(fontSize: 28, color: Colors.white),
+              style: boldFonts.copyWith(
+                  fontSize: 28, color: Colors.white, height: 1.5),
             ),
             Container(
               width: 155,
               height: 35,
-              margin: EdgeInsets.only(top: 8, bottom: 20),
+              margin: EdgeInsets.only(top: 22, bottom: 20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   color: primaryColor,
@@ -59,6 +60,9 @@ class ConfirmAppoimentPage extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 12,
             ),
             Text(
               'Youre done! Well send you a text reminder before your appointment  ',

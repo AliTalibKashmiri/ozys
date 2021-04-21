@@ -31,7 +31,8 @@ class _SelectCountryPageState extends State<SelectCountryPage> {
           children: [
             Row(
               children: [
-                Text('Canada'),
+                Text('Canada',
+                    style: TextStyle(color: Color(0xff979697), fontSize: 16)),
                 Spacer(),
                 Radio(
                     activeColor: primaryColor,
@@ -47,7 +48,8 @@ class _SelectCountryPageState extends State<SelectCountryPage> {
             Divider(),
             Row(
               children: [
-                Text('Pakistan'),
+                Text('Pakistan',
+                    style: TextStyle(color: Color(0xff979697), fontSize: 16)),
                 Spacer(),
                 Radio(
                     activeColor: primaryColor,

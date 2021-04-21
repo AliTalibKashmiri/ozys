@@ -75,12 +75,13 @@ class EditAppoimentScreen extends StatelessWidget {
                     }),
               ),
               SizedBox(
-                height: 23,
+                height: 12,
+              ),
+              Divider(),
+              SizedBox(
+                height: 12,
               ),
               Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                CircleAvatar(
-                  backgroundColor: Colors.grey,
-                ),
                 SizedBox(
                   width: 12,
                 ),
@@ -113,18 +114,38 @@ class EditAppoimentScreen extends StatelessWidget {
                     SizedBox(
                       height: 8,
                     ),
-                    Text(
-                      '8:00 am        5:00 pm',
-                      style: mediumFont.copyWith(fontSize: 12),
+                    Row(
+                      children: [
+                        Text(
+                          '8:00 am',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 18,
+                          color: Color(0xff8D8D8D),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text(
+                          '5:00 pm',
+                          style: mediumFont.copyWith(fontSize: 12),
+                        ),
+                      ],
                     ),
                   ],
                 )
               ]),
               SizedBox(
-                height: 23,
+                height: 12,
               ),
+              Divider(),
               SizedBox(
-                height: 8,
+                height: 12,
               ),
               Row(
                 children: [
@@ -147,7 +168,10 @@ class EditAppoimentScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Icon(Icons.message),
+                  Icon(
+                    Icons.message,
+                    color: Color(0xff9D9D9D),
+                  ),
                   SizedBox(
                     width: 8,
                   ),
@@ -168,7 +192,11 @@ class EditAppoimentScreen extends StatelessWidget {
                     radius: 22,
                     textColor: Colors.white,
                     borderColor: primaryColor),
-              )
+              ),
+              Divider(),
+              SizedBox(
+                height: 12,
+              ),
             ],
           ),
         ),

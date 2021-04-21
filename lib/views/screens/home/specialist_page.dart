@@ -64,13 +64,16 @@ class SpecialistPage extends StatelessWidget {
               SizedBox(
                 height: 24,
               ),
-              CustomButton(
-                  lable: 'Save Changes',
-                  onPress: () {},
-                  color: primaryColor,
-                  radius: 12,
-                  textColor: Colors.white,
-                  borderColor: primaryColor),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomButton(
+                    lable: 'Save Changes',
+                    onPress: () {},
+                    color: primaryColor,
+                    radius: 12,
+                    textColor: Colors.white,
+                    borderColor: primaryColor),
+              ),
               SizedBox(
                 height: 24,
               )
