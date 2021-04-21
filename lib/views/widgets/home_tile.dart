@@ -11,6 +11,7 @@ class HomeListTile extends StatelessWidget {
         .textTheme
         .headline2
         .copyWith(fontWeight: FontWeight.w800, color: Colors.black);
+
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     return Container(
       height: 180,

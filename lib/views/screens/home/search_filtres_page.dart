@@ -75,6 +75,8 @@ class SearchFilters extends StatelessWidget {
               ),
               Slider(
                 value: 5,
+                // activeColor: Color(0xffC7C7C7),
+
                 onChanged: (v) {},
                 min: 0,
                 max: 10,

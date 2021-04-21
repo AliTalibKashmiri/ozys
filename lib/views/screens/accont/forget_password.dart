@@ -41,7 +41,7 @@ class ForgetPassword extends StatelessWidget {
               ),
               Text('Enter your email address to reset password.'),
               SizedBox(
-                height: 12,
+                height: 24,
               ),
               Text('Email Address'),
               CustomTextField(

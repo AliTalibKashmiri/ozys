@@ -19,7 +19,7 @@ AppBar appBar(
         child: action,
       )
     ],
-    centerTitle: false,
+    centerTitle: true,
     backgroundColor: Colors.white,
     elevation: 0.0,
     title: Text(title,

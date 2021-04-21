@@ -113,7 +113,7 @@ class HomePageOne extends StatelessWidget {
                         children: [
                           Container(
                             height: 20,
-                            width: 70,
+                            width: 68,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 color: Colors.green),
@@ -159,7 +159,7 @@ class HomePageOne extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        width: 8,
+                        width: 6,
                       ),
                       VerticalDivider(),
                       SizedBox(

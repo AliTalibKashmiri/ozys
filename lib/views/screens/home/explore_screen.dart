@@ -41,33 +41,36 @@ class _ExploreScreenState extends State<ExploreScreen>
               height: 50,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8),
+              padding: const EdgeInsets.only(left: 6, right: 6),
               child: CustomIconTextField(
                   suffixicon: SizedBox(),
                   txtController: controller,
                   hintText2: 'What are you Looking For?',
                   prefixIcon: Icon(Icons.search)),
             ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  child: CustomTextField(
-                      txtController: controller, hintText2: 'Where?'),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Expanded(
-                  child: CustomTextField(
-                      txtController: controller, hintText2: 'When?'),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 14, right: 14),
+              child: Row(
+                children: [
+                  // SizedBox(
+                  //   width: 12,
+                  // ),
+                  Expanded(
+                    child: CustomTextField(
+                        txtController: controller, hintText2: 'Where?'),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Expanded(
+                    child: CustomTextField(
+                        txtController: controller, hintText2: 'When?'),
+                  ),
+                  // SizedBox(
+                  //   width: 12,
+                  // ),
+                ],
+              ),
             ),
             TabBar(
               isScrollable: true,
@@ -300,7 +303,7 @@ class ExpolorerTile extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 12,
+            height: 6,
           ),
           Row(
             children: [
@@ -316,7 +319,8 @@ class ExpolorerTile extends StatelessWidget {
               Spacer(),
               Text(
                 '4.9 mi',
-                style: mediumFont.copyWith(fontSize: 8),
+                style:
+                    mediumFont.copyWith(fontSize: 12, color: Color(0xff8D8D8D)),
               ),
               SizedBox(
                 width: 8,
@@ -324,7 +328,7 @@ class ExpolorerTile extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 12,
+            height: 8,
           ),
           Row(
             children: [
