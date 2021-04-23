@@ -13,6 +13,7 @@ class SearchLocation extends StatelessWidget {
         body: Container(
             height: Get.height,
             margin: EdgeInsets.only(left: 12, right: 12),
+            width: Get.width,
             child: Column(
               children: [
                 SizedBox(
@@ -30,7 +31,10 @@ class SearchLocation extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(Icons.send),
+                    Icon(
+                      Icons.send,
+                      color: Color(0xffC7C7C7),
+                    ),
                     SizedBox(
                       width: 12,
                     ),
@@ -42,16 +46,40 @@ class SearchLocation extends StatelessWidget {
                           style: mediumStyle.copyWith(
                               fontSize: 17, color: Colors.black),
                         ),
-                        Text(
-                          'Near You',
-                          style: mediumStyle.copyWith(
-                              fontSize: 15, color: Color(0xff8D8D8D)),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Near You',
+                              style: mediumStyle.copyWith(
+                                  fontSize: 15, color: Color(0xff8D8D8D)),
+                            ),
+                            SizedBox(
+                              width: 70,
+                            ),
+                            Container(
+                              height: 25,
+                              width: 130,
+                              margin: EdgeInsets.only(top: 8, left: 8),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  color: primaryColor),
+                              child: Center(
+                                  child: Text(
+                                'ENABLE LOCATION',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 12),
+                              )),
+                            )
+                          ],
                         )
                       ],
                     ),
                     SizedBox()
                   ],
                 ),
+                Divider(),
                 Spacer(),
                 CustomButton(
                   lable: 'Search',

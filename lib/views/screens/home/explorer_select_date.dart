@@ -43,18 +43,26 @@ class ExplorerDate extends StatelessWidget {
               Container(
                 height: 50,
                 child: ListView.builder(
-                    itemCount: 12,
+                    itemCount: list.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return Container(
                         height: 36,
-                        width: 80,
+                        width: 110,
                         margin: EdgeInsets.only(top: 8, left: 8),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(color: Colors.grey),
-                            color: Color(0xffffffff)),
-                        child: Center(child: Text('e')),
+                            color:
+                                index == 0 ? primaryColor : Color(0xffffffff)),
+                        child: Center(
+                            child: Text(
+                          list[index],
+                          style: TextStyle(
+                              color: index == 0
+                                  ? Colors.white
+                                  : Color(0xff9D9D9D)),
+                        )),
                       );
                     }),
               ),

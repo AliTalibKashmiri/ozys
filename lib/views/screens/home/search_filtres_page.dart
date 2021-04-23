@@ -43,7 +43,7 @@ class SearchFilters extends StatelessWidget {
               Wrap(
                 alignment: WrapAlignment.spaceEvenly,
                 spacing: 2,
-                crossAxisAlignment: WrapCrossAlignment.start,
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: list.map((e) {
                   return Container(
                     height: 40,
@@ -52,14 +52,18 @@ class SearchFilters extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(32),
                         border: Border.all(color: Color(0xffEFEFF4)),
-                        color: Color(0xffFFFFFF)),
+                        color: e.contains('Barbershop')
+                            ? primaryColor
+                            : Color(0xffFFFFFF)),
                     child: Center(
                         child: Text(
                       e,
                       style: mediumStyle.copyWith(
-                          color: Color(
-                            0xff8A8A8F,
-                          ),
+                          color: e.contains('Barbershop')
+                              ? Colors.white
+                              : Color(
+                                  0xff8A8A8F,
+                                ),
                           fontSize: 15),
                     )),
                   );

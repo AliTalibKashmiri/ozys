@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:ozys/views/widgets/custom_icon_text_field.dart';
+import 'package:ozys/views/widgets/custom_tabbar.dart';
 import 'package:ozys/views/widgets/custom_text_field.dart';
 import 'package:ozys/views/widgets/home_tile.dart';
 import 'home_page.dart';
@@ -11,18 +12,8 @@ class ExploreScreen extends StatefulWidget {
   _ExploreScreenState createState() => _ExploreScreenState();
 }
 
-class _ExploreScreenState extends State<ExploreScreen>
-    with SingleTickerProviderStateMixin {
+class _ExploreScreenState extends State<ExploreScreen> {
   final controller = TextEditingController();
-  TabController tabcontroller;
-  @override
-  void initState() {
-    super.initState();
-    tabcontroller = TabController(
-      length: 5,
-      vsync: this,
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,103 +23,189 @@ class _ExploreScreenState extends State<ExploreScreen>
         .copyWith(fontWeight: FontWeight.w800, color: Colors.black);
     final mediumFont = Theme.of(context).textTheme.bodyText2;
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 230,
-        elevation: 0.0,
-        flexibleSpace: Column(
-          children: [
-            SizedBox(
-              height: 50,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 6, right: 6),
-              child: CustomIconTextField(
-                  suffixicon: SizedBox(),
-                  txtController: controller,
-                  hintText2: 'What are you Looking For?',
-                  prefixIcon: Icon(Icons.search)),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 14, right: 14),
-              child: Row(
-                children: [
-                  // SizedBox(
-                  //   width: 12,
-                  // ),
-                  Expanded(
-                    child: CustomTextField(
-                        txtController: controller, hintText2: 'Where?'),
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Expanded(
-                    child: CustomTextField(
-                        txtController: controller, hintText2: 'When?'),
-                  ),
-                  // SizedBox(
-                  //   width: 12,
-                  // ),
-                ],
-              ),
-            ),
-            TabBar(
-              isScrollable: true,
-              labelStyle:
-                  mediumFont.copyWith(color: Color(0xff000000), fontSize: 15),
-              unselectedLabelStyle:
-                  mediumFont.copyWith(color: Color(0xff8A8A8F), fontSize: 15),
-              tabs: [
-                Tab(
-                  text: 'All',
-                ),
-                Tab(
-                  text: 'Barber Shop',
-                ),
-                Tab(
-                  text: 'Salon',
-                ),
-                Tab(
-                  text: 'Massage',
-                ),
-                Tab(
-                  text: 'Beauty Salon',
-                )
-              ],
-              controller: tabcontroller,
-            ),
-            SizedBox(
-              height: 12,
-            ),
-          ],
+        appBar: AppBar(
+          toolbarHeight: 80,
+          elevation: 0.0,
+          flexibleSpace: Padding(
+            padding: const EdgeInsets.only(left: 6, right: 6, top: 40),
+            child: CustomIconTextField(
+                suffixicon: SizedBox(),
+                txtController: controller,
+                hintText2: 'What are you Looking For?',
+                prefixIcon: Icon(Icons.search)),
+          ),
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          width: Get.width,
-          height: Get.height,
-          child: Column(
+        body: NestedScrollView(headerSliverBuilder: (context, innderscrol) {
+          return [
+            SliverAppBar(
+              expandedHeight: 448,
+              flexibleSpace: FlexibleSpaceBar(
+                collapseMode: CollapseMode.pin,
+                background: Column(
+                  children: [
+                    ExplorerAppBar(
+                      controller: controller,
+                    ),
+                    Container(
+                      width: Get.width,
+                      child: Column(
+                        children: [
+                          CategoriesListHeading(
+                            data: 'Popular Near By You',
+                          ),
+                          Container(
+                            height: 210,
+                            child: ListView.builder(
+                                itemCount: 12,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) {
+                                  return HomeListTile();
+                                }),
+                          ),
+                          TabViewWidget(
+                              boldFonts: boldFonts, mediumFont: mediumFont),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ];
+        }, body:
+            Expanded(child: ListView.builder(itemBuilder: (context, index) {
+          return ExpolorerTile();
+        }))));
+  }
+}
+
+//  Container(
+//           width: Get.width,
+//            height: Get.height,
+//           child: Column(
+//             children: [
+//               CategoriesListHeading(
+//                 data: 'Popular Near By You',
+//               ),
+//               Container(
+//                 height: 210,
+//                 child: ListView.builder(
+//                     itemCount: 12,
+//                     scrollDirection: Axis.horizontal,
+//                     itemBuilder: (context, index) {
+//                       return HomeListTile();
+//                     }),
+//               ),
+//               TabViewWidget(boldFonts: boldFonts, mediumFont: mediumFont),
+//               Expanded(child: ListView.builder(itemBuilder: (context, index) {
+//                 return ExpolorerTile();
+//               }))
+//             ],
+//           ),
+//         ),
+//       ),
+class ExplorerAppBar extends StatelessWidget {
+  const ExplorerAppBar({
+    Key key,
+    @required this.controller,
+  }) : super(key: key);
+
+  final TextEditingController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final mediumFont = Theme.of(context).textTheme.bodyText2;
+
+    TextStyle unselectedLabelStyle =
+        mediumFont.copyWith(fontSize: 15, color: Color(0xff8A8A8F));
+    TextStyle labelStyle = mediumFont.copyWith(
+      fontSize: 15,
+      color: Color(0xff000000),
+      decoration: TextDecoration.underline,
+    );
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 14, right: 14),
+          child: Row(
             children: [
-              CategoriesListHeading(
-                data: 'Popular Near By You',
+              // SizedBox(
+              //   width: 12,
+              // ),
+              Expanded(
+                child: CustomTextField(
+                    txtController: controller, hintText2: 'Where?'),
               ),
-              Container(
-                height: 210,
-                child: ListView.builder(
-                    itemCount: 12,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return HomeListTile();
-                    }),
+              SizedBox(
+                width: 8,
               ),
-              TabViewWidget(boldFonts: boldFonts, mediumFont: mediumFont),
-              Expanded(child: ListView.builder(itemBuilder: (context, index) {
-                return ExpolorerTile();
-              }))
+              Expanded(
+                child: CustomTextField(
+                    txtController: controller, hintText2: 'When?'),
+              ),
+              // SizedBox(
+              //   width: 12,
+              // ),
             ],
           ),
         ),
-      ),
+        SizedBox(
+          height: 6,
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 8,
+              ),
+              CustomTabBar(lable: 'All', onTab: () {}, labelStyle: labelStyle),
+              CustomTabBar(
+                  lable: 'Barber Shop',
+                  onTab: () {},
+                  labelStyle: unselectedLabelStyle),
+              CustomTabBar(
+                  lable: 'Salon',
+                  onTab: () {},
+                  labelStyle: unselectedLabelStyle),
+              CustomTabBar(
+                  lable: 'Massage',
+                  onTab: () {},
+                  labelStyle: unselectedLabelStyle),
+              CustomTabBar(
+                  lable: 'Beauty Salon',
+                  onTab: () {},
+                  labelStyle: unselectedLabelStyle),
+            ],
+          ),
+        )
+        // TabBar(
+        //   isScrollable: true,
+        //   labelStyle:
+        //       mediumFont.copyWith(color: Color(0xff000000), fontSize: 15),
+        //   unselectedLabelStyle:
+        //       mediumFont.copyWith(color: Color(0xff8A8A8F), fontSize: 15),
+        //   tabs: [
+        //     Tab(
+        //       text: '',
+        //     ),
+        //     Tab(
+        //       text: 'Barber Shop',
+        //     ),
+        //     Tab(
+        //       text: 'Salon',
+        //     ),
+        //     Tab(
+        //       text: 'Massage',
+        //     ),
+        //     Tab(
+        //       text: 'Beauty Salon',
+        //     )
+        //   ],
+        //   controller: tabcontroller,
+        // ),
+      ],
     );
   }
 }

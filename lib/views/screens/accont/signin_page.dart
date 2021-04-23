@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ozys/views/screens/accont/create_account.dart';
 import 'package:ozys/views/screens/accont/forget_password.dart';
 import 'package:ozys/views/screens/bottom_nav_bar.dart';
 import 'package:ozys/views/widgets/appBar.dart';
 import 'package:ozys/views/widgets/custom_button.dart';
-import 'package:ozys/views/widgets/custom_icon_text_field.dart';
 import 'package:ozys/views/widgets/custom_text_field.dart';
 import 'package:ozys/views/widgets/social_button.dart';
 
