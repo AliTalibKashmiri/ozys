@@ -33,7 +33,7 @@ class CustomIconTextField extends StatelessWidget {
               hintText: hintText2,
               hintStyle: TextStyle(
                   color: Color(0xffB5B5B5),
-                  fontSize: 16,
+                  fontSize: 14,
                   fontFamily: 'WorkSans',
                   fontStyle: FontStyle.normal,
                   fontWeight: FontWeight.w500),

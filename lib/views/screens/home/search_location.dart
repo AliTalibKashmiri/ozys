@@ -31,9 +31,14 @@ class SearchLocation extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Icon(
-                      Icons.send,
-                      color: Color(0xffC7C7C7),
+                    // Icon(
+                    //   Icons.send,
+                    //   color: Color(0xffC7C7C7),
+                    // ),
+                    Image.asset(
+                      'assets/images/send.jpg',
+                      width: 20,
+                      height: 20,
                     ),
                     SizedBox(
                       width: 12,
