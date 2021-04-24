@@ -98,6 +98,7 @@ class SearchForSevicesPage extends StatelessWidget {
                 ],
               ),
             ),
+            Divider()
           ],
         ),
       ),

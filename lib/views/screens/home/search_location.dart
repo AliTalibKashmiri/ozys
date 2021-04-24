@@ -84,6 +84,9 @@ class SearchLocation extends StatelessWidget {
                     SizedBox()
                   ],
                 ),
+                SizedBox(
+                  height: 6,
+                ),
                 Divider(),
                 Spacer(),
                 CustomButton(
