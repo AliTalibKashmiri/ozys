@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ozys/views/screens/categories_tile.dart';
+import 'package:ozys/views/screens/home/search_filtres_page.dart';
 import 'package:ozys/views/widgets/custom_icon_text_field.dart';
 import 'package:ozys/views/widgets/home_tile.dart';
 
@@ -70,13 +71,18 @@ class HomePageOne extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 16, right: 16),
-                  child: CustomIconTextField(
-                    txtController: controller,
-                    hintText2: 'Search Somethings',
-                    suffixicon: SizedBox(),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.black,
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(SearchFilters());
+                    },
+                    child: CustomIconTextField(
+                      txtController: controller,
+                      hintText2: 'Search Somethings',
+                      suffixicon: SizedBox(),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),

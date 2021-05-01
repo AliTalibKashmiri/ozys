@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+import 'package:ozys/views/screens/home/search_location.dart';
 import 'package:ozys/views/widgets/custom_icon_text_field.dart';
 import 'package:ozys/views/widgets/custom_tabbar.dart';
 import 'package:ozys/views/widgets/custom_text_field.dart';
@@ -133,8 +134,13 @@ class ExplorerAppBar extends StatelessWidget {
               //   width: 12,
               // ),
               Expanded(
-                child: CustomTextField(
-                    txtController: controller, hintText2: 'Where?'),
+                child: InkWell(
+                  onTap: () {
+                    Get.to(SearchLocation());
+                  },
+                  child: CustomTextField(
+                      txtController: controller, hintText2: 'Where?'),
+                ),
               ),
               SizedBox(
                 width: 8,
