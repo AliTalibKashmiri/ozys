@@ -5,6 +5,7 @@ import 'package:ozys/controller/bottom_nav_controller.dart';
 class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final primaryColor = Theme.of(context).primaryColor;
     return GetBuilder<BottomNavController>(
         init: BottomNavController(),
         builder: (controller) {
@@ -12,7 +13,16 @@ class BottomNavBar extends StatelessWidget {
             body: controller.currentPage,
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: controller.currentIndex,
-              type: BottomNavigationBarType.fixed,
+              type: BottomNavigationBarType.shifting,
+              fixedColor: primaryColor,
+              // backgroundColor: ,
+              showUnselectedLabels: true,
+              showSelectedLabels: true,
+              unselectedIconTheme: IconThemeData(color: Colors.grey),
+              selectedLabelStyle: TextStyle(color: primaryColor),
+              unselectedLabelStyle: TextStyle(
+                color: Colors.grey,
+              ),
               onTap: (index) {
                 controller.updatePage(index);
               },
@@ -22,19 +32,19 @@ class BottomNavBar extends StatelessWidget {
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.location_on_outlined),
                   label: 'Discovery',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.bookmark_border_outlined),
                   label: 'Bookmark',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.calendar_today),
                   label: 'Appointment',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: Icon(Icons.person),
                   label: 'Profile',
                 )
               ],

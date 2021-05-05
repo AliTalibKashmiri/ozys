@@ -8,11 +8,12 @@ AppBar appBar(
     Widget action,
     double height}) {
   return AppBar(
-    leading: InkWell(
-        onTap: () {
-          Get.back();
-        },
-        child: leading),
+    // leading: InkWell(
+    //     onTap: () {
+    //       Get.back();
+    //     },
+    //     child: leading),
+    leading: SizedBox(),
     actions: [
       Padding(
         padding: const EdgeInsets.only(right: 20, top: 16),

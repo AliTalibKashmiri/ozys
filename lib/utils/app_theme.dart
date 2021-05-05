@@ -6,7 +6,7 @@ class AppTheme {
     primaryColor: const Color(0xff38C1EE),
     accentColor: const Color(0xffffffff),
     fontFamily: 'WorkSans',
-    appBarTheme: const AppBarTheme(backgroundColor: const Color(0xffFFFFFF)),
+    appBarTheme: const AppBarTheme(color: const Color(0xffFFFFFF)),
     textTheme: const TextTheme(
       bodyText1: const TextStyle(
         fontFamily: 'WorkSans',

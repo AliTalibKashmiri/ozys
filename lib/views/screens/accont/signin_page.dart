@@ -100,6 +100,15 @@ class SignInPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 22, right: 22, top: 22),
+                child: CustomButton(
+                    lable: 'Create an Account',
+                    onPress: () {},
+                    color: primaryColor,
+                    radius: 12,
+                    borderColor: primaryColor),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 22, right: 22, top: 22),
                 child: SocialButton(
                     lable: 'Continue With Facebook'.toUpperCase(),
                     onPress: () {},

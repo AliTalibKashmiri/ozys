@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ozys/views/widgets/appBar.dart';
 
 class AppoimentPage extends StatelessWidget {
@@ -23,61 +24,69 @@ class AppoimentPage extends StatelessWidget {
       ),
       body: Container(
         margin: EdgeInsets.only(left: 12, right: 12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 16,
-            ),
-            Text(
-              'Upcoming Appointments',
-              style:
-                  mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            AppoimentTileOne(
-                data: data, data2: data2, data3: data3, data4: data4),
-            SizedBox(
-              height: 16,
-            ),
-            Text(
-              'Cancel Appointments',
-              style:
-                  mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            AppoimentTileTwo(
-              data: data,
-              data2: data2,
-              data3: data3,
-              data4: data4,
-              titleOneColor: primaryColor,
-              titleTwoColor: Colors.red,
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            Text(
-              'Completed Appointments',
-              style:
-                  mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            AppoimentTileTwo(
-              data: data,
-              data2: data2,
-              data3: data3,
-              data4: data4,
-              titleOneColor: primaryColor,
-              titleTwoColor: primaryColor,
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 16,
+              ),
+              Text(
+                'Upcoming Appointments',
+                style:
+                    mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              InkWell(
+                onTap: () {
+                  //TODO
+                  // Get.to(()=>);
+                },
+                child: AppoimentTileOne(
+                    data: data, data2: data2, data3: data3, data4: data4),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Text(
+                'Cancel Appointments',
+                style:
+                    mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              AppoimentTileTwo(
+                data: data,
+                data2: data2,
+                data3: data3,
+                data4: data4,
+                titleOneColor: primaryColor,
+                titleTwoColor: Colors.red,
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Text(
+                'Completed Appointments',
+                style:
+                    mediumFont.copyWith(fontSize: 16, color: Color(0xff676870)),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              AppoimentTileTwo(
+                data: data,
+                data2: data2,
+                data3: data3,
+                data4: data4,
+                titleOneColor: primaryColor,
+                titleTwoColor: primaryColor,
+              ),
+            ],
+          ),
         ),
       ),
     );

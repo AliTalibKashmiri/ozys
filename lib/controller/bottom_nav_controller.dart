@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ozys/views/screens/accont/profile_setting.dart';
 import 'package:ozys/views/screens/home/appoiment.dart';
 import 'package:ozys/views/screens/home/booking_confirm.dart';
 import 'package:ozys/views/screens/home/explore_screen.dart';
@@ -7,7 +8,7 @@ import 'package:ozys/views/screens/home/explore_screen.dart';
 import 'package:ozys/views/screens/home/home_page.dart';
 
 class BottomNavController extends GetxController {
-  Widget currentPage;
+  Widget currentPage = HomePage();
   int currentIndex = 0;
 
   void updatePage(index) {
@@ -24,8 +25,8 @@ class BottomNavController extends GetxController {
         update();
         break;
 
-      case 1:
-        currentPage = BookingConfirm();
+      case 4:
+        currentPage = ProfileSetting();
         currentIndex = index;
         update();
         break;

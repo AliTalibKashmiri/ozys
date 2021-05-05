@@ -5,12 +5,14 @@ class CustomIconTextField extends StatelessWidget {
   final Widget suffixicon;
   final Widget prefixIcon;
   final String hintText2;
+  final bool enable;
   final TextEditingController txtController;
   const CustomIconTextField(
       {Key key,
       @required this.suffixicon,
       @required this.txtController,
       @required this.hintText2,
+      @required this.enable,
       @required this.prefixIcon})
       : super(key: key);
   @override
@@ -27,6 +29,7 @@ class CustomIconTextField extends StatelessWidget {
               child: TextFormField(
             obscureText: false,
             controller: txtController,
+            enabled: enable ?? true,
             decoration: InputDecoration(
               suffixIcon: suffixicon,
               prefixIcon: prefixIcon,

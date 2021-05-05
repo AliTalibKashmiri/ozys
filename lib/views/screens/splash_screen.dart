@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:ozys/views/screens/bottom_nav_bar.dart';
 import 'package:ozys/views/screens/login_page.dart';
 
+import 'onbordingscreens/onbording_one.dart';
+
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -14,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 2)).then((value) {
-      Get.offAll(LoginPage());
+      Get.offAll(OnBordingOne());
     });
     super.initState();
   }

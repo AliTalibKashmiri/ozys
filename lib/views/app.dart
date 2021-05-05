@@ -5,6 +5,7 @@ import 'package:ozys/views/screens/home/search_filtres_page.dart';
 import 'package:ozys/views/screens/home/search_for_services.dart';
 
 import 'package:ozys/views/screens/home/search_location.dart';
+import 'package:ozys/views/screens/splash_screen.dart';
 
 class App extends StatelessWidget {
   AppTheme theme = AppTheme();
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: theme.themeData,
-      home: SearchFilters(),
+      home: SplashScreen(),
     );
   }
 }

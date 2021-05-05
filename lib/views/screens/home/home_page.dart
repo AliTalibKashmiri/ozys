@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
           SliverAppBar(
             floating: true,
             toolbarHeight: 300,
-
+            leading: SizedBox(),
             flexibleSpace: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -77,6 +77,7 @@ class HomePage extends StatelessWidget {
                     },
                     child: CustomIconTextField(
                       txtController: controller,
+                      enable: false,
                       hintText2: 'Search Somethings',
                       suffixicon: SizedBox(),
                       prefixIcon: Icon(

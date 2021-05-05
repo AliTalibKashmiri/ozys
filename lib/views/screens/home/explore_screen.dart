@@ -27,6 +27,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
         appBar: AppBar(
           toolbarHeight: 80,
           elevation: 0.0,
+          leading: SizedBox(),
           flexibleSpace: Padding(
             padding: const EdgeInsets.only(left: 6, right: 6, top: 40),
             child: CustomIconTextField(
@@ -40,6 +41,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           return [
             SliverAppBar(
               expandedHeight: 448,
+              leading: SizedBox(),
               flexibleSpace: FlexibleSpaceBar(
                 collapseMode: CollapseMode.pin,
                 background: Column(
@@ -145,10 +147,10 @@ class ExplorerAppBar extends StatelessWidget {
               SizedBox(
                 width: 8,
               ),
-              Expanded(
-                child: CustomTextField(
-                    txtController: controller, hintText2: 'When?'),
-              ),
+              // Expanded(
+              //   child: CustomTextField(
+              //       txtController: controller, hintText2: 'When?'),
+              // ),
               // SizedBox(
               //   width: 12,
               // ),

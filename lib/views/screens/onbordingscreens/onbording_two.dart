@@ -23,14 +23,14 @@ class OnBordingTwo extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    backgroundColor: Colors.lightBlue,
+                    backgroundColor: primary,
                     radius: 10,
                   ),
                   SizedBox(
                     width: 10,
                   ),
                   CircleAvatar(
-                    backgroundColor: primary,
+                    backgroundColor: Colors.lightBlue,
                     radius: 10,
                   ),
                   SizedBox(
